@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Capetown</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet"/>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/basketball_capetown.png" alt="Confirmation Icon">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.instagram.com/basketballcapetown">Our Instagram</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.youtube.com/@basketballcapetown">Our YouTube</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.tiktok.com/@basketballcapetown">Our TikTok</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="tournament-card" id="openModal">
+            <h2 class="mb-4 tournament-title">Battle Between Threes</h2>
+            <span class="bet-status">Bet Confirmed</span>
+            <div class="card-details mb-4">
+                <p class="mb-2"><strong>Team:</strong> Team 2190</p>
+            </div>
+            <button class="btn btn-primary">Show Bet Details</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="confirmationModal">
+        <div class="modal-content">
+            <div class="header">
+                <i class="bi bi-check-circle modal-icon"></i>
+                <h1 class="text-primary">Betting Confirmation</h1>
+            </div>
+            <div class="content">
+                <p><span class="highlight">Team Name:</span> Team 2190</p>
+                <p><span class="highlight">Team Owner:</span> Jonathan Ilunga (JYB)</p>
+                <p><span class="highlight">Initial Bet Amount:</span> R500</p>
+                <p><span class="highlight">Updated Bet Amount:</span> R1,000</p>
+                <p>Team BC and Team 2190 have mutually agreed to escalate the tournament bet from the original <span
+                        class="highlight">R500</span> to a new total of <span class="highlight">R1,000</span>. Both
+                    teams have verbally confirmed and signed off on this updated betting terms, solidifying their
+                    commitment to the Battle Between Threes tournament.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="closeModal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
