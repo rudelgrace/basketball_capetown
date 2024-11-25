@@ -12,34 +12,39 @@
 </head>
 
 <body>
-    <!-- Navbar menu -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="img/basketball_capetown.png" alt="Confirmation Icon">
+                <img src="img/logo.png" alt="basketball-capetown-logo">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas offcanvas-end" id="offcanvasNavbar">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
+                    <h5 class="offcanvas-title">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="https://www.instagram.com/basketballcapetown">Our Instagram</a>
+                            <a class="nav-link" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://www.youtube.com/@basketballcapetown">Our YouTube</a>
+                            <a class="nav-link" href="#">Events</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://www.tiktok.com/@basketballcapetown">Our TikTok</a>
+                            <a class="nav-link" href="#">Players</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Stats</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/bet.html">Bets</a>
                         </li>
                     </ul>
                 </div>
@@ -47,47 +52,177 @@
         </div>
     </nav>
 
-    <!-- Main Content Card -->
-    <div class="main-content">
-        <div class="tournament-card" id="openModal">
-            <h2 class="mb-4 tournament-title">Battle Between Threes</h2>
-            <span class="bet-status">Bet Confirmed</span>
-            <div class="card-details mb-4">
-                <p class="mb-2"><strong>Team:</strong> Team 2190</p>
+    <!-- Hero Section (Unchanged) -->
+    <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel">
+        <!-- Hero Carousel Content Remains the Same -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/api/placeholder/1200/500" class="d-block w-100" alt="Basketball Game">
+                <div class="carousel-caption">
+                    <h3>Championship Finals Highlight</h3>
+                    <p>Watch the incredible buzzer-beater that won us the game!</p>
+                    <a href="#" class="btn btn-success watch-now-btn">Watch Now</a>
+                </div>
             </div>
-            <button class="btn btn-primary">Show Bet Details</button>
+            <div class="carousel-item">
+                <img src="/api/placeholder/1200/500" class="d-block w-100" alt="Training Session">
+                <div class="carousel-caption">
+                    <h3>Training Day Insights</h3>
+                    <p>Get an exclusive look at our training routines</p>
+                    <a href="#" class="btn btn-success watch-now-btn">Watch Now</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/api/placeholder/1200/500" class="d-block w-100" alt="Team Photo">
+                <div class="carousel-caption">
+                    <h3>Meet The Team</h3>
+                    <p>Get to know our amazing players and coaching staff</p>
+                    <a href="#" class="btn btn-success watch-now-btn">Watch Now</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- Featured Content Section -->
+    <div class="featured-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <!-- Upcoming Events -->
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2>Featured Events</h2>
+                        <a href="#" class="btn btn-success">View More Players</a>
+                    </div>
+                    <div class="event-card">
+                        <span class="event-status event-status-upcoming">Upcoming</span>
+
+                        <h4>Battle Between Threes Tournament</h4>
+                        <p><i class="bi bi-calendar"></i> November 30th, 2024</p>
+                        <p><i class="bi bi-geo-alt"></i> Battery Park</p>
+                        <a href="#" class="btn btn-outline-success">Learn More</a>
+                    </div>
+                    <div class="event-card">
+                        <span class="event-status event-status-upcoming">Past event</span>
+
+                        <h4>Clash of Titans 1vs1</h4>
+                        <p><i class="bi bi-calendar"></i> December 9th, 2023</p>
+                        <p><i class="bi bi-geo-alt"></i> Battery Park</p>
+                        <a href="#" class="btn btn-outline-success">Learn More</a>
+                    </div>
+
+
+                    <!-- Player Highlights -->
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2>Player Highlights</h2>
+                        <a href="#" class="btn btn-success">View More Players</a>
+                    </div>
+                    <div class="player-highlights">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="player-card">
+                                    <div class="player-card-content">
+                                        <div class="player-image-container">
+                                            <img src="/api/placeholder/150/150" class="player-image" alt="Player">
+                                        </div>
+                                        <h4>Andy Maweja</h4>
+                                        <p>Andy Maweja emerged as the champion of the Ultimate Showdown Hoopers 1v1,
+                                            securing victory over Brian with a 2-1 game win.</p>
+                                        <a href="#" class="btn btn-outline-success">View Profile</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="player-card">
+                                    <div class="player-card-content">
+                                        <div class="player-image-container">
+                                            <img src="/api/placeholder/150/150" class="player-image" alt="Player">
+                                        </div>
+                                        <h4>Ben Myburgh</h4>
+                                        <p>Ben Myburgh triumphed in the Clash of Titans final, defeating Sun with a
+                                            score of 11-8.</p>
+                                        <a href="#" class="btn btn-outline-success">View Profile</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="player-card">
+                                    <div class="player-card-content">
+                                        <div class="player-image-container">
+                                            <img src="/api/placeholder/150/150" class="player-image" alt="Player">
+                                        </div>
+                                        <h4>Chaunees Goliath</h4>
+                                        <p>Chauness Goliath claimed victory over Laurianne with a 2-0 win, securing the
+                                            match by knockout.</p>
+                                        <a href="#" class="btn btn-outline-success">View Profile</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="text-center mt-3">
+                        <a href="#" class="btn btn-primary">View All Players</a>
+                    </div> -->
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-3">
+                    <div class="social-sidebar">
+                        <h4 class="mb-3">Follow Us</h4>
+                        <hr class="mb-3">
+                        <div class="d-flex flex-wrap">
+                            <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="social-impact-sidebar">
+                        <h4 class="mb-3">Social Impact</h4>
+                        <hr class="mb-3">
+                        <div class="social-page">
+                            <img src="/api/placeholder/50/50" alt="Ball is Vibe">
+                            <a href="#" class="text-decoration-none text-dark">Ball is Vibe</a>
+                        </div>
+                        <div class="social-page">
+                            <img src="/api/placeholder/50/50" alt="Ball is Life CPT">
+                            <a href="#" class="text-decoration-none text-dark">Ball is Life CPT</a>
+                        </div>
+                        <div class="social-page">
+                            <img src="/api/placeholder/50/50" alt="Hoopers for Life">
+                            <a href="#" class="text-decoration-none text-dark">Hoopers for Life</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Modal Confirmation -->
-    <div class="modal" id="confirmationModal">
-        <div class="modal-content">
-            <div class="header">
-                <i class="bi bi-check-circle modal-icon"></i>
-                <h1 class="text-primary">Betting Confirmation</h1>
-            </div>
-            <div class="content">
-                <p><span class="highlight">Team Name:</span> Team 2190</p>
-                <p><span class="highlight">Team Owner:</span> Jonathan Ilunga (JYB)</p>
-                <p><span class="highlight">Initial Bet Amount:</span> R500</p>
-                <p><span class="highlight">Updated Bet Amount:</span> R1,000</p>
-                <p><span class="highlight">Team BC</span> and <span class="highlight">Team 2190</span> have mutually agreed to escalate their tournament wager regarding which team
-                    will last longer in the highly anticipated Battle Between Threes tournament at Battery Park on
-                    November 30th. The original bet of <span class="highlight">R500</span> has been increased to a total
-                    of <span class="highlight">R1,000</span> at the suggestion of Team 2190. Both teams have verbally
-                    confirmed and signed off on the updated terms, solidifying their commitment to this thrilling
-                    showdown.</p>
-            </div>
-            <div class="modal-footer">
-                <button id="closeModal">Close</button>
-            </div>
-        </div>
-    </div>
+    <!-- Support/Donate Button -->
+    <a class="support-button btn btn-success">Support Us</a>
 
-    <!-- Bootstrap and Popper.js -->
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2024 Basketball Capetown. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
 </body>
 
 </html>

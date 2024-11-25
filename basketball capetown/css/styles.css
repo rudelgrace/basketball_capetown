@@ -3,143 +3,259 @@
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         .navbar-brand img {
             max-height: 50px;
-            /* Increased from 30px */
             transition: transform 0.3s ease;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1020;
         }
 
         .navbar-brand img:hover {
             transform: scale(1.1);
         }
 
-        .main-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: calc(100vh - 56px);
-            padding: 20px;
+        /* Hero Section Styles */
+        .hero-carousel {
+            margin-top: 20px;
         }
 
-        .tournament-card {
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-            max-width: 400px;
-            width: 100%;
-            padding: 30px;
-            text-align: center;
+        .carousel-item {
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .carousel-caption {
+            background: rgba(1, 46, 77, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .watch-now-btn {
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .watch-now-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Featured Content Styles */
+        .featured-section {
+            padding: 40px 0;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .player-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
             position: relative;
             overflow: hidden;
-            transition: all 0.3s ease;
-            cursor: pointer;
         }
 
-        .tournament-card::before {
-            content: '';
+        .player-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .player-image-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            overflow: hidden;
+            border: 4px solid #1da792;
+            position: relative;
+        }
+
+        .player-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg,
-                    transparent,
-                    #012e4d,
-                    transparent);
-            transform: rotate(-45deg);
-            opacity: 0.1;
+            top: 0;
+            left: 0;
         }
 
-        .tournament-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        .social-sidebar,
+        .social-impact-sidebar {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
 
-        .tournament-title {
+        .social-icon {
+            font-size: 24px;
             color: #012e4d;
-            text-transform: uppercase;
-            font-weight: 900;
-            letter-spacing: 2px;
+            margin-right: 15px;
+            transition: transform 0.3s ease;
         }
 
-        .bet-status {
-            display: inline-block;
-            background-color: #1da792;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: bold;
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+
+        .social-page {
+            display: flex;
+            align-items: center;
             margin-bottom: 15px;
         }
 
-        /* Modal styling */
-        .modal {
-            display: none;
+        .social-page img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .support-button {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-            z-index: 999;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
-        .modal-content {
-            background: #ffffff;
-            width: 90%;
-            max-width: 600px;
-            padding: 20px;
+        .support-button:hover {
+            transform: scale(1.05);
+        }
+
+        .footer {
+            background-color: #012e4d;
+            color: white;
+            padding: 20px 0;
+            margin-top: auto;
+        }
+
+        /* Updated Player Card and Responsive Layout Styles */
+        .featured-section {
+            padding: 40px 0;
+        }
+
+        /* Improved Player Cards */
+        .player-card {
+            background: white;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            animation: slideIn 0.5s ease-in-out;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            /* Ensure equal height */
         }
 
-        .modal-content .header {
-            border-bottom: 2px solid #012e4d;
-            padding-bottom: 1rem;
-            margin-bottom: 1.5rem;
+        .player-card-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .player-image-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            overflow: hidden;
+            border: 4px solid #1da792;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .player-card h4 {
+            margin-bottom: 10px;
             text-align: center;
         }
 
-        .modal-icon {
-            font-size: 4rem;
-            color: #28a745;
-            margin-bottom: 1rem;
+        .player-card p {
+            flex-grow: 1;
+            text-align: center;
+            margin-bottom: 15px;
         }
 
-        .highlight {
-            color: #012e4d;
-            font-weight: bold;
+        .player-card .btn {
+            align-self: center;
+            margin-top: auto;
         }
 
-        .modal-footer {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 1.5rem;
-        }
-
-        .modal-footer button {
-            background-color: #dc3545;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(-50px) scale(0.9);
-                opacity: 0;
+        /* Responsive Adjustments */
+        @media (max-width: 991.98px) {
+            .featured-section .row {
+                display: flex;
+                flex-wrap: wrap;
             }
 
-            to {
-                transform: translateY(0) scale(1);
-                opacity: 1;
+            .col-lg-9,
+            .col-lg-3 {
+                flex: 0 0 100%;
+                max-width: 100%;
             }
+
+            /* Add spacing between main content and sidebar */
+            .col-lg-9 {
+                margin-bottom: 30px;
+            }
+
+            .player-highlights .row {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+            }
+
+            .player-highlights .col-md-4 {
+                flex: 0 0 calc(50% - 20px);
+                max-width: calc(50% - 20px);
+            }
+        }
+
+        /* Extremely small screens */
+        @media (max-width: 575.98px) {
+            .player-highlights .col-md-4 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+        .social-impact-sidebar a:hover {
+            color: #198754 !important;
+            /* Bootstrap 'btn-success' green */
+            text-decoration: none;
+            /* Ensure no underline appears on hover */
         }
