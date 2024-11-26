@@ -36,7 +36,7 @@
         }
 
         .carousel-caption {
-            background: rgba(1, 46, 77, 0.7);
+            background: rgb(1 46 77 / 27%);
             padding: 20px;
             border-radius: 10px;
             max-width: 600px;
