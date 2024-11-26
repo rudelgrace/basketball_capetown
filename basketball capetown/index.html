@@ -5,10 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basketball Capetown</title>
+
+    <!-- External CSS Libraries -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom Favicon and Stylesheet -->
     <link rel="icon" href="img/bc-ico.png" type="image/png">
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 
 <body>
@@ -18,57 +22,55 @@
             <a class="navbar-brand" href="#">
                 <img src="img/logo.png" alt="Basketball Capetown Logo">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+
+            <!-- Mobile Navigation Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="offcanvas offcanvas-end" id="offcanvasNavbar">
+
+            <!-- Navigation Offcanvas -->
+            <div class="offcanvas offcanvas-end" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title">Menu</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
+
                 <div class="offcanvas-body">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Players</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Stats</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">News</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/bet.html">Bets</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Players</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Stats</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">News</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/bet.html">Bets</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section (Unchanged) -->
-    <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel">
-        <!-- Hero Carousel Content Remains the Same -->
+    <!-- Hero Carousel Section -->
+    <div id="heroCarousel" class="carousel slide hero-carousel mb-5" data-bs-ride="carousel">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
+
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="img/hero/youth_tournament.jpg" class="d-block w-100" alt="Basketball Game">
+                <img src="img/hero/youth_tournament.jpg" class="d-block w-100" alt="Youth Day Classic Basketball Tournament">
                 <div class="carousel-caption">
                     <h3 class="heading-3-block">Youth Day Classic Basketball Tournament</h3>
-                    <p>Relive the action-packed games from the Youth Day Classic, held on June 14-15 at the German International School in Cape Town, hosted by <a class="text-decoration-none hero-link" href="https://www.instagram.com/africangrassroothoops?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">African Grassroot Hoops</a>.</p>
-                    <a href="https://youtu.be/lLDU36WmTRU?si=YteFs9WyZdHIsBzO" class="btn btn-success watch-now-btn">Watch Now</a>
+                    <p>Relive the action-packed games from the Youth Day Classic, held on June 14-15 at the German
+                        International School in Cape Town, hosted by <a class="text-decoration-none hero-link"
+                            href="https://www.instagram.com/africangrassroothoops">African Grassroot Hoops</a>.</p>
+                    <a href="#" class="btn btn-success watch-now-btn">Watch Now</a>
                 </div>
             </div>
+
             <div class="carousel-item">
                 <img src="/api/placeholder/1200/500" class="d-block w-100" alt="Training Session">
                 <div class="carousel-caption">
@@ -77,6 +79,7 @@
                     <a href="#" class="btn btn-success watch-now-btn">Watch Now</a>
                 </div>
             </div>
+
             <div class="carousel-item">
                 <img src="/api/placeholder/1200/500" class="d-block w-100" alt="Team Photo">
                 <div class="carousel-caption">
@@ -86,11 +89,14 @@
                 </div>
             </div>
         </div>
+
         <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
         </button>
     </div>
 
@@ -99,121 +105,248 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <!-- Upcoming Events -->
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h2 class="heading-block">Featured Events</h2>
-                        <a href="#" class="btn btn-success">View More Players</a>
-                    </div>
-                    <div class="event-card">
-                        <div class="event-status-badge upcoming">Upcoming</div>
-                        <h4 class="card-event-heading">Battle Between Threes Tournament</h4>
-                        <p><i class="bi bi-calendar"></i> November 30th, 2024</p>
-                        <p><i class="bi bi-geo-alt"></i> Battery Park</p>
-                        <a href="#" class="btn btn-outline-success">Learn More</a>
-                    </div>
-                    <div class="event-card">
-                        <div class="event-status-badge past">Past Event</div>
-                        <h4 class="card-event-heading">Clash of Titans 1vs1</h4>
-                        <p><i class="bi bi-calendar"></i> December 9th, 2023</p>
-                        <p><i class="bi bi-geo-alt"></i> Battery Park</p>
-                        <a href="#" class="btn btn-outline-success">Learn More</a>
-                    </div>
 
-                    <!-- Player Highlights -->
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h2 class="heading-block">Player Highlights</h2>
-                        <a href="#" class="btn btn-success">View More Players</a>
-                    </div>
-                    <div class="player-highlights">
+                    <!-- Events -->
+                    <section class="upcoming-events mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2 class="heading-block">Featured Events</h2>
+                            <a href="#" class="btn btn-success">View More Events</a>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-status-badge upcoming">Upcoming</div>
+                            <h4 class="card-event-heading">Battle Between Threes Tournament</h4>
+                            <p><i class="bi bi-calendar"></i> November 30th, 2024</p>
+                            <p><i class="bi bi-geo-alt"></i> Battery Park</p>
+                            <a href="#" class="btn btn-outline-success">Learn More</a>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-status-badge past">Past Event</div>
+                            <h4 class="card-event-heading">Clash of Titans 1vs1</h4>
+                            <p><i class="bi bi-calendar"></i> December 9th, 2023</p>
+                            <p><i class="bi bi-geo-alt"></i> Battery Park</p>
+                            <a href="#" class="btn btn-outline-success">Learn More</a>
+                        </div>
+                    </section>
+
+                    <!-- Replace the existing Players and Podcast sections with this updated code -->
+                    <section class="player-highlights mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2 class="heading-block">Players</h2>
+                            <a href="#" class="btn btn-success">View More Players</a>
+                        </div>
+
                         <div class="row">
-                            <div class="col-md-4">
-                                <div class="player-card">
-                                    <div class="player-card-content">
-                                        <div class="player-image-container">
-                                            <img src="/api/placeholder/150/150" class="player-image" alt="Player">
+                            <div class="player-highlights">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="player-card">
+                                            <div class="player-card-content">
+                                                <div class="player-image-container">
+                                                    <img src="/api/placeholder/150/150" class="player-image"
+                                                        alt="Player">
+                                                </div>
+                                                <h4>Andy Maweja</h4>
+                                                <p>Andy Maweja emerged as the champion of the Ultimate Showdown Hoopers
+                                                    1v1, securing victory over Brian with a 2-1 game win.</p>
+                                                <a href="#" class="btn btn-outline-success">View Profile</a>
+                                            </div>
                                         </div>
-                                        <h4>Andy Maweja</h4>
-                                        <p>Andy Maweja emerged as the champion of the Ultimate Showdown Hoopers 1v1,
-                                            securing victory over Brian with a 2-1 game win.</p>
-                                        <a href="#" class="btn btn-outline-success">View Profile</a>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="player-card">
-                                    <div class="player-card-content">
-                                        <div class="player-image-container">
-                                            <img src="/api/placeholder/150/150" class="player-image" alt="Player">
+                                    <div class="col-md-4">
+                                        <div class="player-card">
+                                            <div class="player-card-content">
+                                                <div class="player-image-container">
+                                                    <img src="/api/placeholder/150/150" class="player-image"
+                                                        alt="Player">
+                                                </div>
+                                                <h4>Ben Myburgh</h4>
+                                                <p>Ben Myburgh triumphed in the Clash of Titans final, defeating Sun
+                                                    with a score of 11-8.</p>
+                                                <a href="#" class="btn btn-outline-success">View Profile</a>
+                                            </div>
                                         </div>
-                                        <h4>Ben Myburgh</h4>
-                                        <p>Ben Myburgh triumphed in the Clash of Titans final, defeating Sun with a
-                                            score of 11-8.</p>
-                                        <a href="#" class="btn btn-outline-success">View Profile</a>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="player-card">
-                                    <div class="player-card-content">
-                                        <div class="player-image-container">
-                                            <img src="/api/placeholder/150/150" class="player-image" alt="Player">
+                                    <div class="col-md-4">
+                                        <div class="player-card">
+                                            <div class="player-card-content">
+                                                <div class="player-image-container">
+                                                    <img src="/api/placeholder/150/150" class="player-image"
+                                                        alt="Player">
+                                                </div>
+                                                <h4>Chaunees Goliath</h4>
+                                                <p>Chauness Goliath claimed victory over Laurianne with a 2-0 win,
+                                                    securing the match by knockout.</p>
+                                                <a href="#" class="btn btn-outline-success">View Profile</a>
+                                            </div>
                                         </div>
-                                        <h4>Chaunees Goliath</h4>
-                                        <p>Chauness Goliath claimed victory over Laurianne with a 2-0 win, securing the
-                                            match by knockout.</p>
-                                        <a href="#" class="btn btn-outline-success">View Profile</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
 
+                    <!-- Podcast Section with Added Margin -->
+                    <section class="podcast-section container">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2 class="heading-block">BC Podcasts</h2>
+                            <a href="#" class="btn btn-success">View All Episodes</a>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="podcast-card d-flex align-items-stretch">
+                                    <div class="podcast-image-container">
+                                        <img src="img/podcast/episode1.jpg" alt="Episode 10" class="podcast-image">
+                                        <span class="podcast-badge">Latest</span>
+                                    </div>
+                                    <div class="podcast-content flex-grow-1">
+                                        <h4 class="card-event-heading mb-2">Episode 10: Insights with Coach Julie</h4>
+                                        <div class="podcast-meta mb-2">
+                                            <p class="text-muted mb-1"><i class="bi bi-calendar me-2"></i>November 20,
+                                                2024</p>
+                                            <p class="mb-2">Dive into Coach Julie's journey in basketball, her career,
+                                                and global travels.</p>
+                                        </div>
+                                        <a href="#" class="btn btn-outline-success">Listen Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="podcast-card d-flex align-items-stretch">
+                                    <div class="podcast-image-container">
+                                        <img src="img/podcast/episode2.jpg" alt="Episode 9" class="podcast-image">
+                                        <span class="podcast-badge">Previous</span>
+                                    </div>
+                                    <div class="podcast-content flex-grow-1">
+                                        <h4 class="card-event-heading mb-2">Episode 9: The Rise of Southside Stormers
+                                        </h4>
+                                        <div class="podcast-meta mb-2">
+                                            <p class="text-muted mb-1"><i class="bi bi-calendar me-2"></i>November 10,
+                                                2024</p>
+                                            <p class="mb-2">Learn about the incredible journey of Southside Stormers and
+                                                their impact on local basketball.</p>
+                                        </div>
+                                        <a href="#" class="btn btn-outline-success">Listen Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="podcast-card d-flex align-items-stretch">
+                                    <div class="podcast-image-container">
+                                        <img src="img/podcast/episode3.jpg" alt="Episode 8" class="podcast-image">
+                                        <span class="podcast-badge">Earlier</span>
+                                    </div>
+                                    <div class="podcast-content flex-grow-1">
+                                        <h4 class="card-event-heading mb-2">Episode 8: Training Strategies with Coach
+                                            Nico</h4>
+                                        <div class="podcast-meta mb-2">
+                                            <p class="text-muted mb-1"><i class="bi bi-calendar me-2"></i>November 1,
+                                                2024</p>
+                                            <p class="mb-2">Explore how Coach Nico trains professional players around
+                                                the world.</p>
+                                        </div>
+                                        <a href="#" class="btn btn-outline-success">Listen Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
 
                 <!-- Sidebar -->
                 <div class="col-lg-3">
-                    <div class="social-sidebar">
-                        <h4 class="mb-3 heading-block">Follow Us</h4>
+                    <!-- Social Media Sidebar -->
+                    <aside class="social-sidebar">
+                        <h1 class="mb-3 news-block-title">Follow Us</h1>
                         <hr class="mb-3">
                         <div class="d-flex flex-wrap">
-                            <a href="https://www.instagram.com/basketballcapetown/profilecard/?igsh=MTg0amFld3gycWVzaw=="
-                                class="social-icon"><i class="bi bi-instagram"></i></a>
-                            <a href="https://youtube.com/@basketballcapetown?si=gZy5yR26NZVdgSFB" class="social-icon"><i
-                                    class="bi bi-youtube"></i></a>
-                            <a href="https://l.instagram.com/?u=https%3A%2F%2Fwww.facebook.com%2Fbasketballcapetown%3Fmibextid%3DLQQJ4d&e=AT0gtKbWruz3JfG0F9PIl62cBWE1jI_97BI45RqzVd8B1PIHysPR_PyVq60SSU8wO4V3fGGhGghfS_-KYbUdA6z8wuqfDFYgU1-49C4"
-                                class="social-icon"><i class="bi bi-facebook"></i></a>
-                            <a href="https://www.tiktok.com/@basketballcapetown?is_from_webapp=1&sender_device=pc"
-                                class="social-icon"><i class="bi bi-tiktok"></i></a>
+                            <a href="https://www.instagram.com/basketballcapetown/" class="social-icon"
+                                aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="https://youtube.com/@basketballcapetown" class="social-icon"
+                                aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                            <a href="https://www.facebook.com/basketballcapetown" class="social-icon"
+                                aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="https://www.tiktok.com/@basketballcapetown" class="social-icon"
+                                aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
                         </div>
-                    </div>
+                    </aside>
 
-                    <div class="social-impact-sidebar">
-                        <h4 class="mb-3 heading-block">Social Impact</h4>
+                    <!-- Social Impact Sidebar -->
+                    <aside class="social-impact-sidebar">
+                        <h1 class="mb-3 news-block-title">Social Impact</h1>
                         <hr class="mb-3">
                         <div class="social-page">
                             <img src="img/social_impact/ballisvibe-logo.jpg" alt="Ball is Vibe">
                             <a href="https://www.instagram.com/ballisvibe?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                                class="text-decoration-none text-dark">Ball is Vibe</a>
+                                class="news-link news-block-more-link">Ball is Vibe</a>
                         </div>
+                        <hr>
                         <div class="social-page">
                             <img src="img/social_impact/ballislife-logo.jpg" alt="Ball is Life CPT">
                             <a href="https://www.instagram.com/ballislife_cpt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                                class="text-decoration-none text-dark">Ball is Life CPT</a>
+                                class="news-link news-block-more-link">Ball is Life CPT</a>
                         </div>
+                        <hr>
                         <div class="social-page">
                             <img src="img/social_impact/hgt logo.jpg" alt="Hoopers for Life">
                             <a href="https://www.instagram.com/hoopers.game.time?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                                class="text-decoration-none text-dark">hoopers.game.time</a>
+                                class="news-link news-block-more-link">Hoopers.game.time</a>
                         </div>
-                    </div>
+                    </aside>
 
+                    <aside class="heading-new">
+                        <div class="news-block-content">
+                            <div class="news-block-header">
+                                <div class="news-block-title-container">
+                                    <h1 class="news-block-title">Headlines News</h1>
+                                </div>
+                                <div>
+                                    <a href="#" class="news-link news-block-more-link">See more</a>
+                                </div>
+                            </div>
+                            <hr>
+                            <ul class="news-list">
+                                <li class="news-list-item">
+                                    <a href="#" class="news-link">
+                                        Southside Stormers Clinch Championship in Thrilling Final
+                                    </a>
+                                    <hr>
+                                </li>
+                                <li class="news-list-item">
+                                    <a href="#" class="news-link">
+                                        Rising Star Andy Maweja Named Player of the Month
+                                    </a>
+                                    <hr>
+                                </li>
+                                <li class="news-list-item">
+                                    <a href="#" class="news-link">
+                                        Basketball Capetown Launches Youth Development Program
+                                    </a>
+                                    <hr>
+                                </li>
+                                <li class="news-list-item">
+                                    <a href="#" class="news-link">
+                                        Coach Nico Reveals Innovative Training Techniques
+                                    </a>
+                                    <hr>
+                                </li>
+                                <li class="news-list-item">
+                                    <a href="#" class="news-link">
+                                        Local Tournament Draws Record Number of Participants
+                                    </a>
+                                    <hr>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Support/Donate Button -->
-    <a class="support-button btn btn-success">Support Us</a>
+    <!-- Support Button -->
+    <a href="#" class="support-button btn btn-success">Support Us</a>
 
     <!-- Footer -->
     <footer class="footer text-center">
@@ -222,7 +355,7 @@
         </div>
     </footer>
 
-    <!-- Bootstrap Scripts -->
+    <!-- Bootstrap and Popper.js Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
