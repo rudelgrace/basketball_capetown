@@ -1,18 +1,19 @@
-// Modal functionality
-const modal = document.getElementById('confirmationModal');
-const openModal = document.getElementById('openModal');
-const closeModal = document.getElementById('closeModal');
-
-openModal.addEventListener('click', () => {
-    modal.style.display = 'flex';
-});
-
-closeModal.addEventListener('click', () => {
-    modal.style.display = 'none';
-});
-
-window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.style.display = 'none';
-    }
-});
+document.addEventListener("DOMContentLoaded", () => {
+    const fadeIns = document.querySelectorAll(".fade-in");
+  
+    const handleScroll = () => {
+        fadeIns.forEach((element) => {
+            const rect = element.getBoundingClientRect();
+            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  
+            if (rect.top <= windowHeight - 50 && !element.classList.contains("visible")) { 
+                element.classList.add("visible");  // Add 'visible' class only once
+            }
+        });
+    };
+  
+    // Trigger on page load and scroll
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+  });
+  
