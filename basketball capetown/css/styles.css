@@ -281,7 +281,11 @@ body {
     padding: 40px 0;
 }
 
-.social-impact-sidebar a:hover {
+.hero-link{
+    font-weight: 700;
+}
+.social-impact-sidebar a:hover, 
+.hero-link:hover {
     color: #198754 !important;
     text-decoration: none;
 }
