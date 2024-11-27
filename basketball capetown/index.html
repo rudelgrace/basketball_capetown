@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Custom Favicon and Stylesheet -->
-    <link rel="icon" href="img/bc-ico.png" type="image/png">
+    <link rel="icon" href="img/logo/bc-ico.png" type="image/png">
     <link href="css/styles.css" rel="stylesheet">
 </head>
 
@@ -20,7 +20,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="img/logo.png" alt="Basketball Capetown Logo">
+                <img src="img/logo/bc-logo.png" alt="Basketball Capetown Logo">
             </a>
 
             <!-- Mobile Navigation Toggle -->
@@ -38,8 +38,8 @@
 
                 <div class="offcanvas-body">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Players</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Stats</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">News</a></li>
@@ -49,6 +49,7 @@
             </div>
         </div>
     </nav>
+    <!-- End Navbar -->
 
     <!-- Hero Carousel Section -->
     <div id="heroCarousel" class="carousel slide hero-carousel mb-5" data-bs-ride="carousel">
@@ -61,7 +62,8 @@
 
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="img/yth.JPG" class="d-block w-100" alt="Youth Day Classic Basketball Tournament">
+                <img src="img/hero/youth_tournament.jpg" class="d-block w-100"
+                    alt="Youth Day Classic Basketball Tournament">
                 <div class="carousel-caption">
                     <h3 class="heading-3-block">Youth Day Classic Basketball Tournament</h3>
                     <p>Relive the action-packed games from the Youth Day Classic, held on June 14-15 at the German
@@ -99,6 +101,7 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+    <!-- End Hero Carousel Section -->
 
     <!-- Featured Content Section -->
     <div class="featured-section">
@@ -106,45 +109,48 @@
             <div class="row">
                 <div class="col-lg-9">
 
-                    <!-- Events -->
-                    <section class="upcoming-events mb-4 fade-in">
+                    <!-- Home Events Section-->
+                    <section class="bc-events-home-section mb-4 fade-in">
                         <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h2 class="heading-block">Featured Events</h2>
-                            <a href="#" class="btn btn-success">View More Events</a>
+                            <h2 class="bc-heading-h2">Featured Events</h2>
+                            <a href="events.html" class="btn btn-success">View More Events</a>
                         </div>
 
-                        <div class="event-card">
-                            <div class="event-status-badge upcoming">Upcoming</div>
-                            <h4 class="card-event-heading">Battle Between Threes Tournament</h4>
+                        <div class="bc-event-card">
+                            <div class="bc-event-status-badge upcoming">Upcoming</div>
+                            <h4 class="bc-card-heading">Battle Between Threes Tournament</h4>
                             <p><i class="bi bi-calendar"></i> November 30th, 2024</p>
                             <p><i class="bi bi-geo-alt"></i> Battery Park</p>
+                            <p><i class="bi bi-trophy-fill"></i>3v3 Tournament</p>
                             <a href="#" class="btn btn-outline-success">Learn More</a>
                         </div>
 
-                        <div class="event-card">
-                            <div class="event-status-badge past">Past Event</div>
-                            <h4 class="card-event-heading">Clash of Titans 1vs1</h4>
+                        <div class="bc-event-card">
+                            <div class="bc-event-status-badge past">Past Event</div>
+                            <h4 class="bc-card-heading">Clash of Titans 1vs1</h4>
                             <p><i class="bi bi-calendar"></i> December 9th, 2023</p>
                             <p><i class="bi bi-geo-alt"></i> Battery Park</p>
+                            <p><i class="bi bi-trophy-fill"></i>1v1 Tournament</p>
                             <a href="#" class="btn btn-outline-success">Learn More</a>
                         </div>
                     </section>
+                    <!-- End Home Events Section -->
 
-                    <!-- Replace the existing Players and Podcast sections with this updated code -->
-                    <section class="player-highlights mb-4 fade-in">
+                    <!-- Home Players Section -->
+                    <section class="bc-players-home-section mb-4 fade-in">
                         <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h2 class="heading-block">Players</h2>
+                            <h2 class="bc-heading-h2">Players</h2>
                             <a href="#" class="btn btn-success">View More Players</a>
                         </div>
 
                         <div class="row">
-                            <div class="player-highlights">
+                            <div class="bc-players-home-section">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <div class="player-card">
-                                            <div class="player-card-content">
-                                                <div class="player-image-container">
-                                                    <img src="/api/placeholder/150/150" class="player-image"
+                                        <div class="bc-player-card">
+                                            <div class="bc-player-card-content">
+                                                <div class="bc-player-image-container">
+                                                    <img src="/api/placeholder/150/150" class="bc-player-image"
                                                         alt="Player">
                                                 </div>
                                                 <h4>Andy Maweja</h4>
@@ -155,10 +161,10 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="player-card">
-                                            <div class="player-card-content">
-                                                <div class="player-image-container">
-                                                    <img src="/api/placeholder/150/150" class="player-image"
+                                        <div class="bc-player-card">
+                                            <div class="bc-player-card-content">
+                                                <div class="bc-player-image-container">
+                                                    <img src="/api/placeholder/150/150" class="bc-player-image"
                                                         alt="Player">
                                                 </div>
                                                 <h4>Ben Myburgh</h4>
@@ -169,10 +175,10 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="player-card">
-                                            <div class="player-card-content">
-                                                <div class="player-image-container">
-                                                    <img src="/api/placeholder/150/150" class="player-image"
+                                        <div class="bc-player-card">
+                                            <div class="bc-player-card-content">
+                                                <div class="bc-player-image-container">
+                                                    <img src="/api/placeholder/150/150" class="bc-player-image"
                                                         alt="Player">
                                                 </div>
                                                 <h4>Chaunees Goliath</h4>
@@ -186,23 +192,24 @@
                             </div>
                         </div>
                     </section>
+                    <!-- End Home Players Section -->
 
-                    <!-- Podcast Section with Added Margin -->
-                    <section class="podcast-section container fade-in">
+                    <!-- Home Podcast Section -->
+                    <section class="bc-podcast-home-section container fade-in">
                         <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h2 class="heading-block">BC Podcasts</h2>
+                            <h2 class="bc-heading-h2">BC Podcasts</h2>
                             <a href="#" class="btn btn-success">View All Episodes</a>
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <div class="podcast-card d-flex align-items-stretch">
-                                    <div class="podcast-image-container">
-                                        <img src="img/podcast/episode1.jpg" alt="Episode 10" class="podcast-image">
-                                        <span class="podcast-badge">Latest</span>
+                                <div class="bc-podcast-card d-flex align-items-stretch">
+                                    <div class="bc-podcast-image-container">
+                                        <img src="img/podcast/episode1.jpg" alt="Episode 10" class="bc-podcast-image">
+                                        <span class="bc-podcast-badge">Latest</span>
                                     </div>
-                                    <div class="podcast-content flex-grow-1">
-                                        <h4 class="card-event-heading mb-2">Episode 10: Insights with Coach Julie</h4>
-                                        <div class="podcast-meta mb-2">
+                                    <div class="bc-podcast-content flex-grow-1">
+                                        <h4 class="bc-card-heading mb-2">Episode 10: Insights with Coach Julie</h4>
+                                        <div class="bc-podcast-meta mb-2">
                                             <p class="text-muted mb-1"><i class="bi bi-calendar me-2"></i>November 20,
                                                 2024</p>
                                             <p class="mb-2">Dive into Coach Julie's journey in basketball, her career,
@@ -213,15 +220,15 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <div class="podcast-card d-flex align-items-stretch">
-                                    <div class="podcast-image-container">
-                                        <img src="img/podcast/episode2.jpg" alt="Episode 9" class="podcast-image">
-                                        <span class="podcast-badge">Previous</span>
+                                <div class="bc-podcast-card d-flex align-items-stretch">
+                                    <div class="bc-podcast-image-container">
+                                        <img src="img/podcast/episode2.jpg" alt="Episode 9" class="bc-podcast-image">
+                                        <span class="bc-podcast-badge">Previous</span>
                                     </div>
-                                    <div class="podcast-content flex-grow-1">
-                                        <h4 class="card-event-heading mb-2">Episode 9: The Rise of Southside Stormers
+                                    <div class="bc-podcast-content flex-grow-1">
+                                        <h4 class="bc-card-heading mb-2">Episode 9: The Rise of Southside Stormers
                                         </h4>
-                                        <div class="podcast-meta mb-2">
+                                        <div class="bc-podcast-meta mb-2">
                                             <p class="text-muted mb-1"><i class="bi bi-calendar me-2"></i>November 10,
                                                 2024</p>
                                             <p class="mb-2">Learn about the incredible journey of Southside Stormers and
@@ -232,15 +239,15 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <div class="podcast-card d-flex align-items-stretch">
-                                    <div class="podcast-image-container">
-                                        <img src="img/podcast/episode3.jpg" alt="Episode 8" class="podcast-image">
-                                        <span class="podcast-badge">Earlier</span>
+                                <div class="bc-podcast-card d-flex align-items-stretch">
+                                    <div class="bc-podcast-image-container">
+                                        <img src="img/podcast/episode3.jpg" alt="Episode 8" class="bc-podcast-image">
+                                        <span class="bc-podcast-badge">Earlier</span>
                                     </div>
-                                    <div class="podcast-content flex-grow-1">
-                                        <h4 class="card-event-heading mb-2">Episode 8: Training Strategies with Coach
+                                    <div class="bc-podcast-content flex-grow-1">
+                                        <h4 class="bc-card-heading mb-2">Episode 8: Training Strategies with Coach
                                             Nico</h4>
-                                        <div class="podcast-meta mb-2">
+                                        <div class="bc-podcast-meta mb-2">
                                             <p class="text-muted mb-1"><i class="bi bi-calendar me-2"></i>November 1,
                                                 2024</p>
                                             <p class="mb-2">Explore how Coach Nico trains professional players around
@@ -252,88 +259,90 @@
                             </div>
                         </div>
                     </section>
+                    <!-- En Podcast Section -->
                 </div>
 
                 <!-- Sidebar -->
                 <div class="col-lg-3">
                     <!-- Social Media Sidebar -->
-                    <aside class="social-sidebar fade-in">
-                        <h1 class="mb-3 news-block-title">Follow Us</h1>
+                    <aside class="bc-social-sidebar fade-in bc-sidebar">
+                        <h1 class="mb-3 bc-news-block-title">Follow Us</h1>
                         <hr class="mb-3">
                         <div class="d-flex flex-wrap">
-                            <a href="https://www.instagram.com/basketballcapetown/" class="social-icon"
+                            <a href="https://www.instagram.com/basketballcapetown/" class="bc-social-icon"
                                 aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                            <a href="https://youtube.com/@basketballcapetown" class="social-icon"
+                            <a href="https://youtube.com/@basketballcapetown" class="bc-social-icon"
                                 aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-                            <a href="https://www.facebook.com/basketballcapetown" class="social-icon"
+                            <a href="https://www.facebook.com/basketballcapetown" class="bc-social-icon"
                                 aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                            <a href="https://www.tiktok.com/@basketballcapetown" class="social-icon"
+                            <a href="https://www.tiktok.com/@basketballcapetown" class="bc-social-icon"
                                 aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
                         </div>
                     </aside>
 
                     <!-- Social Impact Sidebar -->
-                    <aside class="social-impact-sidebar fade-in">
-                        <h1 class="mb-3 news-block-title">Social Impact</h1>
+                    <aside class="bc-social-impact-sidebar fade-in bc-sidebar">
+                        <h1 class="mb-3 bc-news-block-title">Social Impact</h1>
                         <hr class="mb-3">
-                        <div class="social-page">
-                            <img src="img/social_impact/ballisvibe-logo.jpg" alt="Ball is Vibe">
-                            <a href="https://www.instagram.com/ballisvibe?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                                class="news-link news-block-more-link">Ball is Vibe</a>
-                        </div>
-                        <hr>
-                        <div class="social-page">
-                            <img src="img/social_impact/ballislife-logo.jpg" alt="Ball is Life CPT">
-                            <a href="https://www.instagram.com/ballislife_cpt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                                class="news-link news-block-more-link">Ball is Life CPT</a>
-                        </div>
-                        <hr>
-                        <div class="social-page">
+                        <div class="bc-social-page">
                             <img src="img/social_impact/hgt logo.jpg" alt="Hoopers for Life">
                             <a href="https://www.instagram.com/hoopers.game.time?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                                class="news-link news-block-more-link">Hoopers.game.time</a>
+                                class="bc-text-hover-link bc-anchor-link">Hoopers Game Time</a>
                         </div>
+                        <div class="bc-social-page">
+                            <img src="img/social_impact/prspct.jpg" alt="Hoopers for Life">
+                            <a href="https://www.instagram.com/prspcthoops?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                class="bc-text-hover-link bc-anchor-link">PRSPCT HOOPS</a>
+                        </div>
+
+                        <div class="bc-social-page">
+                            <img src="img/social_impact/ballisvibe-logo.jpg" alt="Ball is Vibe">
+                            <a href="https://www.instagram.com/ballisvibe?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                class="bc-text-hover-link bc-anchor-link">Ball is Vibe</a>
+                        </div>
+                        <hr>
+                        <div class="bc-social-page">
+                            <img src="img/social_impact/ballislife-logo.jpg" alt="Ball is Life CPT">
+                            <a href="https://www.instagram.com/ballislife_cpt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                class="bc-text-hover-link bc-anchor-link">Ball is Life CPT</a>
+                        </div>
+                        <hr>
+
                     </aside>
 
-                    <aside class="heading-new fade-in">
-                        <div class="news-block-content">
-                            <div class="news-block-header">
-                                <div class="news-block-title-container">
-                                    <h1 class="news-block-title">Headlines</h1>
+                    <aside class="bc-headline-news-sidebar fade-in bc-sidebar">
+                        <div class="bc-news-content">
+                            <div class="bc-news-header">
+                                <div class="bc-news-title-container">
+                                    <h1 class="bc-news-block-title">Headlines</h1>
                                 </div>
                                 <div>
-                                    <a href="#" class="news-link news-block-more-link">See more</a>
+                                    <a href="#" class="bc-text-hover-link bc-anchor-link">See more</a>
                                 </div>
                             </div>
                             <hr>
-                            <ul class="news-list">
-                                <li class="news-list-item">
-                                    <a href="#" class="news-link">
-                                        Southside Stormers Clinch Championship in Thrilling Final
+                            <ul class="bc-news-list">
+                                <li class="bc-news-list-item">
+                                    <a href="#" class="bc-text-hover-link">
+                                        The Untold Story of Tayra Zonn: The Chosen One
                                     </a>
                                     <hr>
                                 </li>
-                                <li class="news-list-item">
-                                    <a href="#" class="news-link">
-                                        Rising Star Andy Maweja Named Player of the Month
+                                <li class="bc-news-list-item">
+                                    <a href="#" class="bc-text-hover-link">
+                                        Rising Star Andy Maweja Won the Ultimate Hoops Showdown at Battery Park
                                     </a>
                                     <hr>
                                 </li>
-                                <li class="news-list-item">
-                                    <a href="#" class="news-link">
-                                        Basketball Capetown Launches Youth Development Program
+                                <li class="bc-news-list-item">
+                                    <a href="#" class="bc-text-hover-link">
+                                        Ben Champion of the 1st Edition of Clash of Titans at Battery Park
                                     </a>
                                     <hr>
                                 </li>
-                                <li class="news-list-item">
-                                    <a href="#" class="news-link">
+                                <li class="bc-news-list-item">
+                                    <a href="#" class="bc-text-hover-link">
                                         Coach Nico Reveals Innovative Training Techniques
-                                    </a>
-                                    <hr>
-                                </li>
-                                <li class="news-list-item">
-                                    <a href="#" class="news-link">
-                                        Local Tournament Draws Record Number of Participants
                                     </a>
                                     <hr>
                                 </li>
@@ -344,16 +353,19 @@
             </div>
         </div>
     </div>
+    <!-- End Featured Content Section -->
 
     <!-- Support Button -->
-    <a href="#" class="support-button btn btn-success">Support Us</a>
+    <a href="#" class="bc-support-button btn btn-success">Support Us</a>
+    <!-- End Support Button -->
 
     <!-- Footer -->
-    <footer class="footer text-center">
+    <footer class="bc-footer text-center">
         <div class="container">
             <p>&copy; 2024 Basketball Capetown. All Rights Reserved.</p>
         </div>
     </footer>
+    <!-- End Footer -->
 
     <!-- Bootstrap and Popper.js Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

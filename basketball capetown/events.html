@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Capetown</title>
+
+    <!-- External CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom Favicon and Stylesheet -->
+    <link rel="icon" href="img/logo/bc-ico.png" type="image/png">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo/bc-logo.png" alt="Basketball Capetown Logo">
+            </a>
+
+            <!-- Mobile Navigation Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Offcanvas -->
+            <div class="offcanvas offcanvas-end" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Players</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Stats</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">News</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/bet.html">Bets</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Events Hero Section -->
+    <div class="events-hero container-fluid p-0 position-relative">
+        <div
+            class="hero-overlay d-flex align-items-center justify-content-center position-absolute top-0 start-0 w-100 h-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center text-white">
+                        <h1 class="display-4 mb-3 fw-bold">Basketball Capetown Events</h1>
+                        <p class="lead mb-4 px-3">Step into the action with Cape Town's premier basketball events.
+                            Whether you're hosting your own tournament or competing for glory, this is where the passion
+                            for hoops meets the thrill of the game.</p>
+                        <div class="hero-cta d-flex justify-content-center gap-3">
+                            <a href="#upcoming-events" class="btn btn-success btn-lg px-4 py-2">Explore Events</a>
+                            <a href="#" class="btn btn-outline-light btn-lg px-4 py-2">Host an Event</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="img/hero/youth_tournament.JPG" class="position-absolute top-0 start-0 w-100 h-100 object-cover"
+            alt="Basketball Events in Cape Town">
+    </div>
+    <!-- Hero Section End -->
+
+    <!-- Featured Content Section -->
+    <div class="featured-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <!-- Events Search and Filter -->
+                    <div class="events-search-filter mb-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" id="eventSearch" class="form-control" placeholder="Search events...">
+                            </div>
+                            <div class="col-md-6">
+                                <select class="form-select" id="eventFilter">
+                                    <option value="">All Events</option>
+                                    <option value="tournament">3v3 Tournament</option>
+                                    <option value="1vs1">1vs1 Challenges</option>
+                                    <option value="training">5v5 Tournament</option>
+                                    <option value="training">Training Camps</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Events Section -->
+                    <section class="bc-events-section mb-4">
+                        <div class="row">
+                            <!-- Event Card 1 -->
+                            <div class="col-md-6">
+                                <div class="bc-event-card">
+                                    <div class="bc-event-status-badge upcoming">Upcoming</div>
+                                    <h4 class="bc-card-heading">Battle Between Threes</h4>
+                                    <p><i class="bi bi-calendar"></i> November 30th, 2024</p>
+                                    <p><i class="bi bi-geo-alt"></i> Battery Park</p>
+                                    <p><i class="bi bi-trophy-fill"></i>3v3 Tournament</p>
+                                    <a href="#" class="btn btn-outline-success">Register Now</a>
+                                </div>
+                            </div>
+
+                            <!-- Event Card 2 -->
+                            <div class="col-md-6">
+                                <div class="bc-event-card">
+                                    <div class="bc-event-status-badge upcoming">Upcoming</div>
+                                    <h4 class="bc-card-heading">Clash of Aliens</h4>
+                                    <p><i class="bi bi-calendar"></i> December 15th, 2024</p>
+                                    <p><i class="bi bi-geo-alt"></i> Cape Town Sports Complex</p>
+                                    <p><i class="bi bi-trophy-fill"></i>5v5 Tournament</p>
+                                    <a href="#" class="btn btn-outline-success">Learn More</a>
+                                </div>
+                            </div>
+
+                            <!-- Event Card 3 -->
+                            <div class="col-md-6">
+                                <div class="bc-event-card">
+                                    <div class="bc-event-status-badge upcoming">Upcoming</div>
+                                    <h4 class="bc-card-heading">Summer Street Ball Challenge</h4>
+                                    <p><i class="bi bi-calendar"></i> January 10th, 2025</p>
+                                    <p><i class="bi bi-geo-alt"></i> Sea Point Promenade</p>
+                                    <p><i class="bi bi-trophy-fill"></i>3v3 Tournament</p>
+                                    <a href="#" class="btn btn-outline-success">Sign Up</a>
+                                </div>
+                            </div>
+
+                            <!-- Event Card 4 -->
+                            <div class="col-md-6 ">
+                                <div class="bc-event-card">
+                                    <div class="bc-event-status-badge past">Past Event</div>
+                                    <h4 class="bc-card-heading">Clash of Titans 1vs1</h4>
+                                    <p><i class="bi bi-calendar"></i> December 9th, 2023</p>
+                                    <p><i class="bi bi-geo-alt"></i> Battery Park</p>
+                                    <p><i class="bi bi-trophy-fill"></i>1v1 Tournament</p>
+                                    <a href="#" class="btn btn-outline-success">View Highlights</a>
+                                </div>
+                            </div>
+
+                            <!-- Event Card 5 -->
+                            <div class="col-md-6">
+                                <div class="bc-event-card">
+                                    <div class="bc-event-status-badge upcoming">Upcoming</div>
+                                    <h4 class="bc-card-heading">Pro Skills Masterclass</h4>
+                                    <p><i class="bi bi-calendar"></i> February 5th, 2025</p>
+                                    <p><i class="bi bi-geo-alt"></i> German International School</p>
+                                    <p><i class="bi bi-trophy-fill"></i>Training Camp</p>
+                                    <a href="#" class="btn btn-outline-success">Book Now</a>
+                                </div>
+                            </div>
+
+                            <!-- Event Card 6 -->
+                            <div class="col-md-6">
+                                <div class="bc-event-card">
+                                    <div class="bc-event-status-badge past">Past Event</div>
+                                    <h4 class="bc-card-heading">Youth Day Classic</h4>
+                                    <p><i class="bi bi-calendar"></i> June 15th, 2024</p>
+                                    <p><i class="bi bi-geo-alt"></i> Hosted by African Grassroot Hoops</p>
+                                    <p><i class="bi bi-trophy-fill"></i>5v5 Tournament</p>
+                                    <a href="#" class="btn btn-outline-success">View Gallery</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="events-pagination text-center mt-4">
+                            <nav aria-label="Event pages">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Sidebar (Same as Home Page) -->
+                <div class="col-lg-3">
+                    <!-- Social Media Sidebar -->
+                    <aside class="bc-social-sidebar fade-in bc-sidebar">
+                        <h1 class="mb-3 bc-news-block-title">Follow Us</h1>
+                        <hr class="mb-3">
+                        <div class="d-flex flex-wrap">
+                            <a href="https://www.instagram.com/basketballcapetown/" class="bc-social-icon"
+                                aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="https://youtube.com/@basketballcapetown" class="bc-social-icon"
+                                aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                            <a href="https://www.facebook.com/basketballcapetown" class="bc-social-icon"
+                                aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="https://www.tiktok.com/@basketballcapetown" class="bc-social-icon"
+                                aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                        </div>
+                    </aside>
+
+                    <!-- Social Impact Sidebar (Same as Home Page) -->
+                    <aside class="bc-social-impact-sidebar fade-in bc-sidebar">
+                        <h1 class="mb-3 bc-news-block-title">Social Impact</h1>
+                        <hr class="mb-3">
+                        <div class="bc-social-page">
+                            <img src="img/social_impact/hgt logo.jpg" alt="Hoopers for Life">
+                            <a href="https://www.instagram.com/hoopers.game.time?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                class="bc-text-hover-link bc-anchor-link">Hoopers Game Time</a>
+                        </div>
+                        <div class="bc-social-page">
+                            <img src="img/social_impact/prspct.jpg" alt="Hoopers for Life">
+                            <a href="https://www.instagram.com/prspcthoops?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                class="bc-text-hover-link bc-anchor-link">PRSPCT HOOPS</a>
+                        </div>
+                        <div class="bc-social-page">
+                            <img src="img/social_impact/ballisvibe-logo.jpg" alt="Ball is Vibe">
+                            <a href="https://www.instagram.com/ballisvibe?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                class="bc-text-hover-link bc-anchor-link">Ball is Vibe</a>
+                        </div>
+                        <hr>
+                        <div class="bc-social-page">
+                            <img src="img/social_impact/ballislife-logo.jpg" alt="Ball is Life CPT">
+                            <a href="https://www.instagram.com/ballislife_cpt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                class="bc-text-hover-link bc-anchor-link">Ball is Life CPT</a>
+                        </div>
+                        <hr>
+                    </aside>
+
+                    <!-- Headline News Sidebar (Same as Home Page) -->
+                    <aside class="bc-headline-news-sidebar fade-in bc-sidebar">
+                        <div class="bc-news-content">
+                            <div class="bc-news-header">
+                                <div class="bc-news-title-container">
+                                    <h1 class="bc-news-block-title">Headlines</h1>
+                                </div>
+                                <div>
+                                    <a href="#" class="bc-text-hover-link bc-anchor-link">See more</a>
+                                </div>
+                            </div>
+                            <hr>
+                            <ul class="bc-news-list">
+                                <li class="bc-news-list-item">
+                                    <a href="#" class="bc-text-hover-link">
+                                        The Untold Story of Tayra Zonn: The Chosen One
+                                    </a>
+                                    <hr>
+                                </li>
+                                <li class="bc-news-list-item">
+                                    <a href="#" class="bc-text-hover-link">
+                                        Rising Star Andy Maweja Won the Ultimate Hoops Showdown at Battery Park
+                                    </a>
+                                    <hr>
+                                </li>
+                                <li class="bc-news-list-item">
+                                    <a href="#" class="bc-text-hover-link">
+                                        Ben Champion of the 1st Edition of Clash of Titans at Battery Park
+                                    </a>
+                                    <hr>
+                                </li>
+                                <li class="bc-news-list-item">
+                                    <a href="#" class="bc-text-hover-link">
+                                        Coach Nico Reveals Innovative Training Techniques
+                                    </a>
+                                    <hr>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Featured Content Section -->
+
+    <!-- Support Button -->
+    <a href="#" class="bc-support-button btn btn-success">Support Us</a>
+    <!-- End Support Button -->
+
+    <!-- Footer -->
+    <footer class="bc-footer text-center">
+        <div class="container">
+            <p>&copy; 2024 Basketball Capetown. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Bootstrap and Popper.js Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
