@@ -86,7 +86,7 @@ body {
 
 /* Button Styles */
 .watch-now-btn,
-.support-button {
+.bc-support-button {
     border: none;
     border-radius: 25px;
     padding: 10px 25px;
@@ -94,14 +94,14 @@ body {
 }
 
 .watch-now-btn:hover,
-.support-button:hover {
+.bc-support-button:hover {
     transform: scale(1.05);
 }
 
 /* Event Card Styles */
 
-.event-card {
-    background: white;
+.bc-event-card {
+    background: #fff;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
@@ -111,56 +111,52 @@ body {
     overflow: hidden;
 }
 
-.event-card:hover {
+.bc-event-card:hover {
     transform: translateY(-5px);
 }
 
-.event-status-badge {
+.bc-event-status-badge {
     position: absolute;
     top: 15px;
     right: -35px;
     padding: 8px 40px;
     transform: rotate(45deg);
-    color: white;
+    color: #fff;
     font-size: 0.85rem;
     font-weight: 500;
     text-transform: uppercase;
     z-index: 1;
 }
 
-.event-status-badge.upcoming {
+.bc-event-status-badge.upcoming {
     background-color: #198754;
     /* Bootstrap success color */
 }
 
-.event-status-badge.past {
+.bc-event-status-badge.past {
     background-color: #6c757d;
     /* Bootstrap secondary color */
 }
 
-.event-card:hover {
-    transform: translateY(-5px);
-}
-
-.event-card h4 {
+.bc-event-card h4 {
     margin-top: 10px;
     margin-bottom: 15px;
 }
 
-.event-card p {
+.bc-event-card p {
     margin-bottom: 10px;
     color: #666;
 }
 
-.event-card .bi {
+.bc-event-card .bi {
     margin-right: 8px;
     color: #198754;
 }
 
 
 /* Player Card Styles */
-.player-card {
-    background: white;
+.bc-player-card {
+    background: #fff;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
@@ -171,18 +167,18 @@ body {
     height: 100%;
 }
 
-.player-card:hover {
+.bc-player-card:hover {
     transform: translateY(-5px);
 }
 
-.player-card-content {
+.bc-player-card-content {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
 /* Player Image Container */
-.player-image-container {
+.bc-player-image-container {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -193,7 +189,7 @@ body {
     flex-shrink: 0;
 }
 
-.player-image {
+.bc-player-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -202,50 +198,40 @@ body {
     left: 0;
 }
 
-.player-card h4 {
+.bc-player-card h4 {
     margin-bottom: 10px;
     text-align: center;
 }
 
-.player-card p {
+.bc-player-card p {
     flex-grow: 1;
     text-align: center;
     margin-bottom: 15px;
 }
 
-.player-card .btn {
+.bc-player-card .btn {
     align-self: center;
     margin-top: auto;
 }
 
-/* Social Media Sidebar Styles */
-.social-sidebar,
-.social-impact-sidebar {
-    background: white;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.social-icon {
+.bc-social-icon {
     font-size: 24px;
     color: #012e4d;
     margin-right: 15px;
     transition: transform 0.3s ease;
 }
 
-.social-icon:hover {
+.bc-social-icon:hover {
     transform: scale(1.2);
 }
 
-.social-page {
+.bc-social-page {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
 }
 
-.social-page img {
+.bc-social-page img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -253,7 +239,7 @@ body {
 }
 
 /* Heading Styles */
-.heading-block {
+.bc-heading-h2 {
     text-transform: uppercase;
     font-family: 'Knockout Wide', sans-serif;
     font-weight: 400;
@@ -263,7 +249,7 @@ body {
 }
 
 /* Support Button */
-.support-button {
+.bc-support-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -272,9 +258,9 @@ body {
 }
 
 /* Footer Styles */
-.footer {
+.bc-footer {
     background-color: #012e4d;
-    color: white;
+    color: #fff;
     padding: 20px 0;
     margin-top: auto;
 }
@@ -284,7 +270,7 @@ body {
     padding: 40px 0;
 }
 
-.social-impact-sidebar a:hover,
+.bc-social-impact-sidebar a:hover,
 .hero-link:hover {
     color: #198754 !important;
     text-decoration: none;
@@ -315,27 +301,27 @@ body {
         margin-bottom: 30px;
     }
 
-    .player-highlights .row {
+    .bc-players-home-section .row {
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
         justify-content: center;
     }
 
-    .player-highlights .col-md-4 {
+    .bc-players-home-section .col-md-4 {
         flex: 0 0 calc(50% - 20px);
         max-width: calc(50% - 20px);
     }
 }
 
 @media (max-width: 575.98px) {
-    .player-highlights .col-md-4 {
+    .bc-players-home-section .col-md-4 {
         flex: 0 0 100%;
         max-width: 100%;
     }
 }
 
-.podcast-card {
+.bc-podcast-card {
     background: #fff;
     border-radius: 10px;
     border: 1px solid #e0e0e0;
@@ -343,26 +329,31 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     position: relative;
+    transition: transform 0.3s ease;
 }
 
-.podcast-image-container {
+.bc-podcast-card:hover {
+    transform: translateY(-5px);
+}
+
+.bc-podcast-image-container {
     width: 200px;
     position: relative;
     flex-shrink: 0;
 }
 
-.podcast-image-container .podcast-image {
+.bc-podcast-image-container .bc-podcast-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.podcast-badge {
+.bc-podcast-badge {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #6c757d;
-    color: white;
+    background-color: #198754;
+    color: #fff;
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 0.7rem;
@@ -370,60 +361,61 @@ body {
     z-index: 10;
 }
 
-.podcast-content {
+.bc-podcast-content {
     padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.podcast-content .card-event-heading {
+.bc-card-heading {
     color: #333;
     font-weight: bold;
 }
 
-.podcast-meta .bi {
+.bc-podcast-meta .bi {
     color: #198754;
 }
 
 @media (max-width: 768px) {
-    .podcast-card {
+    .bc-podcast-card {
         flex-direction: column !important;
     }
 
-    .podcast-image-container {
+    .bc-podcast-image-container {
         width: 100%;
         height: 250px;
     }
 
-    .podcast-image-container .podcast-image {
+    .bc-podcast-image-container .bc-podcast-image {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
 
-    .podcast-badge {
+    .bc-podcast-badge {
         top: 10px;
         left: 10px;
         right: auto;
     }
 }
 
-/* Styles for the news section in the home page */
-/* Styles for the news section in the home page */
-.heading-new {
-    background: white;
+.bc-sidebar {
+    background: #fff;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    position: relative;
 }
 
-.news-block-content {
+.bc-news-content {
     padding: 1.5rem;
 }
 
-.news-block-header {
+.bc-news-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -432,21 +424,21 @@ body {
     border-bottom: 1px solid #ebe9e7;
 }
 
-.news-block-title-container {
+.bc-news-title-container {
     display: flex;
     align-items: center;
 }
 
-.news-block-title {
+.bc-news-block-title {
     text-transform: uppercase;
     font-family: "Knockout Wide", sans-serif;
-    font-weight: 400;
-    font-size: 1.25rem;
+    font-weight: 600;
+    font-size: 1.15rem;
     line-height: 1;
     margin-right: 0.5rem;
 }
 
-.news-block-more-link {
+.bc-anchor-link {
     font-family: "Roboto", Arial, sans-serif;
     font-weight: 400;
     font-size: 0.875rem;
@@ -455,11 +447,11 @@ body {
     text-decoration: none;
 }
 
-.news-block-more-link:hover {
+.bc-anchor-link:hover {
     color: #146c43;
 }
 
-.news-list-item {
+.bc-news-list-item {
     font-family: "Roboto", Arial, sans-serif;
     font-weight: 300;
     font-size: 0.875rem;
@@ -468,16 +460,16 @@ body {
     border-bottom: 1px solid #e5e7eb;
 }
 
-.news-link {
+.bc-text-hover-link {
     text-decoration: none;
     color: #333;
 }
 
-.news-link:hover {
+.bc-text-hover-link:hover {
     color: #198754;
 }
 
-ul.news-list {
+ul.bc-news-list {
     list-style: none;
     padding: 0;
 }
@@ -493,6 +485,7 @@ hr {
         opacity: 0;
         transform: translateX(-50px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -504,6 +497,7 @@ hr {
         opacity: 0;
         transform: translateX(50px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -515,6 +509,7 @@ hr {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -526,6 +521,7 @@ hr {
         opacity: 0;
         transform: scale(0.9);
     }
+
     to {
         opacity: 1;
         transform: scale(1);

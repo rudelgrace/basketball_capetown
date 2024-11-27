@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Select all elements that should have scroll animations
     const scrollElements = document.querySelectorAll(
-        '.fade-in, .event-card, .player-card, .podcast-card, .social-sidebar, .social-impact-sidebar, .heading-new'
+        '.fade-in, .bc-event-card, .bc-player-card, .bc-podcast-card, .bc-social-sidebar, .bc-social-impact-sidebar, .bc-headline-news-sidebar'
     );
 
     // Intersection Observer options
