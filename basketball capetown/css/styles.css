@@ -600,3 +600,139 @@ hr {
 .animated:nth-child(3n) {
     animation-delay: 0.4s;
 }
+
+/* Team Showcase Styles */
+.bc-team-showcase {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.bc-team-showcase:hover {
+    transform: translateY(-5px);
+}
+
+.bc-team-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.bc-team-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+
+.bc-team-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #012e4d;
+}
+
+.bc-team-category {
+    color: #6c757d;
+    font-size: 0.85rem;
+}
+
+.bc-team-players {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+}
+
+.bc-team-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(20% - 15px);
+    max-width: 120px;
+}
+
+.bc-player-thumb {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 8px;
+    border: 2px solid #198754;
+}
+
+.bc-tab-color {
+    color: #198754;
+}
+
+.bc-tab-color:hover {
+    color: #198754;
+}
+
+.bc-player-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bc-player-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.bc-player-name {
+    font-weight: bold;
+    color: #333;
+    font-size: 0.8rem;
+    margin-bottom: 3px;
+}
+
+.bc-player-position {
+    color: #6c757d;
+    font-size: 0.7rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .bc-team-players {
+        gap: 10px;
+    }
+
+    .bc-team-player {
+        width: calc(33.333% - 10px);
+    }
+
+    .bc-player-thumb {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .bc-team-player {
+        width: calc(50% - 10px);
+    }
+}
+
+.btn-outline-instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+.btn-outline-instagram:hover {
+    background: linear-gradient(45deg, #bc1888, #cc2366, #dc2743, #e6683c, #f09433);
+    color: #fff;
+    border: none;
+}
