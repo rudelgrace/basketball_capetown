@@ -52,11 +52,26 @@
     <!-- End Navbar -->
 
     <!-- Hero Section -->
-    <div class="container-fluid bg-light py-5">
-        <div class="container text-center">
-            <h1 class="display-4 mb-4">Basketball Capetown Players Registry</h1>
-            <p class="lead mb-4">Discover, Connect, and Compete with Cape Town's Basketball Community</p>
+    <div class="events-hero container-fluid p-0 position-relative">
+        <div
+            class="hero-overlay d-flex align-items-center justify-content-center position-absolute top-0 start-0 w-100 h-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center text-white">
+                        <h1 class="display-4 mb-3 fw-bold">Basketball Capetown Players</h1>
+                        <p class="lead mb-4 px-3">Step into the action with Cape Town's premier basketball events.
+                            Whether you're hosting your own tournament or competing for glory, this is where the passion
+                            for hoops meets the thrill of the game.</p>
+                        <div class="hero-cta d-flex justify-content-center gap-3">
+                            <a href="#upcoming-events" class="btn btn-success btn-lg px-4 py-2">Explore Events</a>
+                            <a href="#" class="btn btn-outline-light btn-lg px-4 py-2">Host an Event</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <img src="img/hero/youth_tournament.JPG" class="position-absolute top-0 start-0 w-100 h-100 object-cover"
+            alt="Basketball Events in Cape Town">
     </div>
 
     <!-- Main Content -->
@@ -64,63 +79,63 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <!-- Search and Create Player Section -->
-                    <div class="mb-4 d-flex justify-content-between align-items-center">
-                        <div class="flex-grow-1 me-3">
-                            <input type="text" class="form-control"
-                                placeholder="Search players by name, tournament, or position">
-                        </div>
-                        <button class="btn btn-success">Create Player Profile</button>
-                    </div>
-
-                    <!-- Tournament Category Tabs -->
-                    <ul class="nav nav-tabs mb-4">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#1v1" data-bs-toggle="tab">1v1 Tournament</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#3v3" data-bs-toggle="tab">3v3 Tournament</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#5v5" data-bs-toggle="tab">5v5 Tournament</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#training" data-bs-toggle="tab">Training Bootcamp</a>
-                        </li>
-                    </ul>
-
-                    <!-- Players Grid -->
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active" id="1v1">
-                            <div class="row">
-                                <div class="col-md-4 mb-4">
-                                    <div class="bc-player-card">
-                                        <div class="bc-player-card-content">
-                                            <div class="bc-player-image-container">
-                                                <img src="img/users/bc-user.jpg" class="bc-player-image"
-                                                    alt="Andy Maweja">
-                                            </div>
-                                            <h4>Andy Maweja</h4>
-                                            <p>1v1 Tournament Champion</p>
-                                            <div class="player-details mb-3">
-                                                <p><strong>Position:</strong> Guard</p>
-                                                <p><strong>Tournaments:</strong> 3 Wins</p>
-                                            </div>
-                                            <a href="#" class="btn btn-outline-success">View Profile</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- More 1v1 players... -->
+                    <div class="mb-4 d-flex align-items-center">
+                        <div class="row w-100 g-2">
+                            <div class="col-md-6 mb-2">
+                                <input type="text" class="form-control" placeholder="Search players">
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <select class="form-select" id="eventFilter">
+                                    <option value="">All Events</option>
+                                    <option value="tournament">3v3 Tournament</option>
+                                    <option value="1vs1">1vs1 Challenges</option>
+                                    <option value="5v5">5v5 Tournament</option>
+                                    <option value="training">Training Camps</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="3v3">
-                            <!-- 3v3 Players Content -->
+                    </div>
+
+                    <!-- Compact Players Grid -->
+                    <div class="row row-cols-1 row-cols-md-3 g-3">
+                        <div class="col">
+                            <div class="card h-100">
+                                <img src="img/featured/bc-user.jpg" class="card-img-top" alt="Andy Maweja">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title mb-2">Andy Maweja</h5>
+                                    <p class="card-text mb-2">
+                                        <strong>Age:</strong> 24<br>
+                                        <strong>Origin:</strong> Cape Town, SA
+                                    </p>
+                                    <a href="#" class="btn btn-sm btn-success">View Profile</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="tab-pane fade" id="5v5">
-                            <!-- 5v5 Players Content -->
+                        <div class="col">
+                            <div class="card h-100">
+                                <img src="img/users/bc-user.jpg" class="card-img-top" alt="Player Name">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title mb-2">Player Name</h5>
+                                    <p class="card-text mb-2">
+                                        <strong>Age:</strong> 22<br>
+                                        <strong>Origin:</strong> City, Country
+                                    </p>
+                                    <a href="#" class="btn btn-sm btn-success">View Profile</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="tab-pane fade" id="training">
-                            <!-- Training Bootcamp Players Content -->
+                        <div class="col">
+                            <div class="card h-100">
+                                <img src="img/users/bc-user.jpg" class="card-img-top" alt="Player Name">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title mb-2">Player Name</h5>
+                                    <p class="card-text mb-2">
+                                        <strong>Age:</strong> 22<br>
+                                        <strong>Origin:</strong> City, Country
+                                    </p>
+                                    <a href="#" class="btn btn-sm btn-success">View Profile</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -138,6 +153,7 @@
                         </ul>
                     </nav>
                 </div>
+
 
                 <!-- Sidebar -->
                 <div class="col-lg-3">
