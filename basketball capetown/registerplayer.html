@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Capetown</title>
+
+    <!-- External CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css" rel="stylesheet">
+
+
+    <!-- Custom Favicon and Stylesheet -->
+    <link rel="icon" href="img/logo/bc-ico.png" type="image/png">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="img/logo/bc-logo.png" alt="Basketball Capetown Logo">
+            </a>
+
+            <!-- Mobile Navigation Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Offcanvas -->
+            <div class="offcanvas offcanvas-end" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="players.html">Players</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Stats</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">News</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Bets</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Hero Section -->
+    <div class="events-hero container-fluid p-0 position-relative">
+        <div
+            class="hero-overlay d-flex align-items-center justify-content-center position-absolute top-0 start-0 w-100 h-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center text-white">
+                        <h1 class="display-4 mb-2">Create Your Player Profile</h1>
+                        <p class="lead mb-4">Showcase Your Basketball Journey with Basketball Capetown</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="img/featured/ben vs bompito.jpg" class="position-absolute top-0 start-0 w-100 h-100 object-cover"
+            alt="Basketball Background">
+    </div>
+
+    <!-- Main Content -->
+    <div class="featured-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="form-section">
+                        <h2 class="text-center mb-4">Create Your Player Profile</h2>
+
+                        <form id="createPlayerProfileForm">
+                            <!-- Cover Image Upload -->
+                            <div class="mb-4">
+                                <label class="form-label">Cover Image</label>
+                                <div class="image-upload-container cover-image-container">
+                                    <img src="" alt="Cover Image" id="coverImagePreview" style="display:none;">
+                                    <div class="upload-placeholder">
+                                        <i class="bi bi-image fs-2 mb-2"></i>
+                                        <p>Click to upload cover image</p>
+                                    </div>
+                                    <input type="file" id="coverImageUpload" accept="image/*">
+                                </div>
+                            </div>
+
+                            <!-- Profile Image Upload -->
+                            <div class="profile-image-container mb-4">
+                                <div class="image-upload-container profile-image">
+                                    <img src="" alt="Profile Image" id="profileImagePreview" style="display:none;">
+                                    <div class="upload-placeholder">
+                                        <i class="bi bi-person fs-2 mb-2"></i>
+                                        <p>Profile Photo</p>
+                                    </div>
+                                    <input type="file" id="profileImageUpload" accept="image/*">
+                                </div>
+                            </div>
+
+                            <!-- Personal Information -->
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="firstName"
+                                        placeholder="Enter first name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" placeholder="Enter last name"
+                                        required>
+                                </div>
+                            </div>
+
+                            <!-- Contact Information -->
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email"
+                                        placeholder="Enter email address" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="dateOfBirth" class="form-label">Date of Birth</label>
+                                    <input type="date" class="form-control" id="dateOfBirth" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                               
+                                <div class="col-md-12 mb-3">
+                                    <label for="phoneNumber" class="form-label">Phone number</label>
+                                    <input type="tel" class="form-control" id="phoneNumber"
+                                        placeholder="Enter phone number" required>
+                                </div>
+                            </div>
+                            <!-- WhatsApp Number -->
+                            <div class="row mb-3">
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="sameWhatsAppNumber">
+                                        <label class="form-check-label" for="sameWhatsAppNumber">
+                                            Use same number for WhatsApp
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" id="whatsAppNumberSection" style="display:none;">
+                                <div class="col-12 mb-3">
+                                    <label for="whatsAppNumber" class="form-label">WhatsApp Number</label>
+                                    <input type="tel" class="form-control" id="whatsAppNumber"
+                                        placeholder="Enter WhatsApp number">
+                                </div>
+                            </div>
+
+                            <!-- Location Information -->
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="countryOfOrigin" class="form-label">Country of Origin</label>
+                                    <select class="form-select" id="countryOfOrigin" required>
+                                        <option value="">Select Country</option>
+                                        <option value="ZA">South Africa</option>
+                                        <option value="US">United States</option>
+                                        <option value="KE">Kenya</option>
+                                        <option value="NG">Nigeria</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="currentCity" class="form-label">Current City</label>
+                                    <input type="text" class="form-control" id="currentCity"
+                                        placeholder="Enter current city" required>
+                                </div>
+                            </div>
+
+                            <!-- Basketball Profile -->
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="playingCategory" class="form-label">Playing Category</label>
+                                    <select class="form-select" id="playingCategory" required>
+                                        <option value="">Select Category</option>
+                                        <option value="1v1">1v1 Player</option>
+                                        <option value="3v3">3v3 Player</option>
+                                        <option value="5v5">5v5 Player</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="playingPosition" class="form-label">Playing Position</label>
+                                    <select class="form-select" id="playingPosition" required>
+                                        <option value="">Select Position</option>
+                                        <option value="pointGuard">Point Guard</option>
+                                        <option value="shootingGuard">Shooting Guard</option>
+                                        <option value="smallForward">Small Forward</option>
+                                        <option value="powerForward">Power Forward</option>
+                                        <option value="center">Center</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Player Bio -->
+                            <div class="mb-3">
+                                <label for="playerBio" class="form-label">Player Biography</label>
+                                <textarea class="form-control" id="playerBio" rows="4"
+                                    placeholder="Tell us about your basketball journey..."></textarea>
+                            </div>
+
+                            <!-- Terms and Conditions -->
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                                <label class="form-check-label" for="termsCheck">
+                                    I agree to the Basketball Capetown Terms of Service and Privacy Policy
+                                </label>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-success btn-lg px-5">Create Profile</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="successModalLabel">Profile Created Successfully!</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <i class="bi bi-check-circle text-success fs-1 mb-3"></i>
+                    <p>Your Basketball Capetown player profile has been created successfully!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Support Button -->
+    <a href="#" class="bc-support-button btn btn-success">Support Us</a>
+    <!-- End Support Button -->
+
+    <!-- Footer -->
+    <footer class="bc-footer text-center">
+        <div class="container">
+            <p>&copy; 2024 Basketball Capetown. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Bootstrap and Popper.js Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
