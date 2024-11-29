@@ -9,6 +9,8 @@
     <!-- External CSS Libraries -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css" rel="stylesheet">
+
 
     <!-- Custom Favicon and Stylesheet -->
     <link rel="icon" href="img/logo/bc-ico.png" type="image/png">
@@ -75,6 +77,15 @@
                 <div class="col-lg-9">
                     <div class="form-section">
                         <form id="createPlayerProfileForm">
+                            <!-- Cover Image Upload -->
+                            <div class="cover-image-upload mb-4">
+                                <img src="img/cover-placeholder.jpg" alt="Cover Image" id="coverImage">
+                                <div class="upload-overlay">
+                                    <i class="bi bi-camera fs-2"></i>
+                                    <input type="file" id="coverImageUpload" class="d-none" accept="image/*">
+                                </div>
+                            </div>
+
                             <!-- Profile Image Upload -->
                             <div class="profile-image-upload mb-4">
                                 <img src="img/users/bc-user.jpg" alt="Profile Picture" id="profileImage">
@@ -107,23 +118,6 @@
                                 </div>
                             </div>
 
-                            <!-- Location Information -->
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="countryOfOrigin" class="form-label">Country of Origin</label>
-                                    <select class="form-select" id="countryOfOrigin" required>
-                                        <option value="">Select Country</option>
-                                        <option value="ZA">South Africa</option>
-                                        <option value="US">United States</option>
-                                        <!-- Add more countries -->
-                                    </select>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="currentCity" class="form-label">Current City</label>
-                                    <input type="text" class="form-control" id="currentCity" required>
-                                </div>
-                            </div>
-
                             <!-- Basketball Profile -->
                             <div class="row">
                                 <div class="col-md-6 mb-3">
@@ -145,6 +139,43 @@
                                         <option value="playmaker">Power forward</option>
                                         <option value="allRounder">Center</option>
                                     </select>
+                                </div>
+                            </div>
+
+                            <!-- Contact Information -->
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="phoneNumber" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phoneNumber" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-check mt-4">
+                                        <input class="form-check-input" type="checkbox" id="sameWhatsAppNumber">
+                                        <label class="form-check-label" for="sameWhatsAppNumber">
+                                            Use same number for WhatsApp
+                                        </label>
+                                    </div>
+                                    <div id="whatsAppNumberSection" class="mt-2" style="display: none;">
+                                        <label for="whatsAppNumber" class="form-label">WhatsApp Number</label>
+                                        <input type="tel" class="form-control" id="whatsAppNumber">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Location Information -->
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="countryOfOrigin" class="form-label">Country of Origin</label>
+                                    <select class="form-select" id="countryOfOrigin" required>
+                                        <option value="">Select Country</option>
+                                        <option value="ZA">South Africa</option>
+                                        <option value="US">United States</option>
+                                        <!-- Add more countries -->
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="currentCity" class="form-label">Current City</label>
+                                    <input type="text" class="form-control" id="currentCity" required>
                                 </div>
                             </div>
 
@@ -193,6 +224,26 @@
         </div>
     </div>
 
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="successModalLabel">Profile Created Successfully!</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <i class="bi bi-check-circle text-success fs-1 mb-3"></i>
+                    <p>Your Basketball Capetown player profile has been created successfully!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Support Button -->
     <a href="#" class="bc-support-button btn btn-success">Support Us</a>
     <!-- End Support Button -->
@@ -206,6 +257,8 @@
     <!-- End Footer -->
 
     <!-- Bootstrap and Popper.js Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
