@@ -46,8 +46,32 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollObserver.observe(element);
     });
 });
+ // Image Upload Previews
+ function setupImageUpload(inputId, previewId) {
+    const input = document.getElementById(inputId);
+    const preview = document.getElementById(previewId);
+    const container = input.closest('.image-upload-container');
+    const placeholder = container.querySelector('.upload-placeholder');
 
-// International Phone Number Input
+    input.addEventListener('change', function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+                placeholder.style.display = 'none';
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+}
+
+// Setup image uploads
+setupImageUpload('coverImageUpload', 'coverImagePreview');
+setupImageUpload('profileImageUpload', 'profileImagePreview');
+
+// Phone number initialization (similar to previous version)
 const phoneInput = document.getElementById('phoneNumber');
 const whatsAppInput = document.getElementById('whatsAppNumber');
 
@@ -73,72 +97,31 @@ const whatsAppIntl = window.intlTelInput(whatsAppInput, {
     utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"
 });
 
-// Cover Image Upload Preview
-document.querySelector('.cover-image-upload .upload-overlay').addEventListener('click', function () {
-    document.getElementById('coverImageUpload').click();
-});
-
-document.getElementById('coverImageUpload').addEventListener('change', function (event) {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-
-    reader.onload = function (e) {
-        document.getElementById('coverImage').src = e.target.result;
-    };
-
-    reader.readAsDataURL(file);
-});
-
-// Profile Image Upload Preview (previous code remains the same)
-document.querySelector('.profile-image-upload .upload-overlay').addEventListener('click', function () {
-    document.getElementById('profileImageUpload').click();
-});
-
-document.getElementById('profileImageUpload').addEventListener('change', function (event) {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-
-    reader.onload = function (e) {
-        document.getElementById('profileImage').src = e.target.result;
-    };
-
-    reader.readAsDataURL(file);
-});
-
 // WhatsApp Number Toggle
 const sameWhatsAppCheckbox = document.getElementById('sameWhatsAppNumber');
 const whatsAppNumberSection = document.getElementById('whatsAppNumberSection');
 
 sameWhatsAppCheckbox.addEventListener('change', function () {
-    if (this.checked) {
-        whatsAppNumberSection.style.display = 'none';
-        whatsAppInput.value = phoneInput.value;
-    } else {
-        whatsAppNumberSection.style.display = 'block';
-    }
+    whatsAppNumberSection.style.display = this.checked ? 'none' : 'block';
 });
 
-// Form Submission Handler
+// Form Submission
 document.getElementById('createPlayerProfileForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    // Validate phone numbers
-    const phoneNumber = phoneIntl.getNumber();
-    const whatsAppNumber = sameWhatsAppCheckbox.checked
-        ? phoneIntl.getNumber()
-        : whatsAppIntl.getNumber();
-
-    // Here you would typically send the form data to a backend server
+    // Collect form data
     const formData = {
         firstName: document.getElementById('firstName').value,
         lastName: document.getElementById('lastName').value,
         email: document.getElementById('email').value,
-        phoneNumber: phoneNumber,
-        whatsAppNumber: whatsAppNumber
-        // Add other form fields
+        phoneNumber: phoneIntl.getNumber(),
+        whatsAppNumber: sameWhatsAppCheckbox.checked
+            ? phoneIntl.getNumber()
+            : whatsAppIntl.getNumber(),
+        // Add other form fields as needed
     };
 
-    // Show success modal
-    const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-    successModal.show();
+    // Here you would typically send data to backend
+    console.log(formData);
+    alert('Profile created successfully!');
 });

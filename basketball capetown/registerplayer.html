@@ -76,22 +76,31 @@
             <div class="row justify-content-center">
                 <div class="col-lg-9">
                     <div class="form-section">
+                        <h2 class="text-center mb-4">Create Your Player Profile</h2>
+
                         <form id="createPlayerProfileForm">
                             <!-- Cover Image Upload -->
-                            <div class="cover-image-upload mb-4">
-                                <img src="img/cover-placeholder.jpg" alt="Cover Image" id="coverImage">
-                                <div class="upload-overlay">
-                                    <i class="bi bi-camera fs-2"></i>
-                                    <input type="file" id="coverImageUpload" class="d-none" accept="image/*">
+                            <div class="mb-4">
+                                <label class="form-label">Cover Image</label>
+                                <div class="image-upload-container cover-image-container">
+                                    <img src="" alt="Cover Image" id="coverImagePreview" style="display:none;">
+                                    <div class="upload-placeholder">
+                                        <i class="bi bi-image fs-2 mb-2"></i>
+                                        <p>Click to upload cover image</p>
+                                    </div>
+                                    <input type="file" id="coverImageUpload" accept="image/*">
                                 </div>
                             </div>
 
                             <!-- Profile Image Upload -->
-                            <div class="profile-image-upload mb-4">
-                                <img src="img/users/bc-user.jpg" alt="Profile Picture" id="profileImage">
-                                <div class="upload-overlay">
-                                    <i class="bi bi-camera"></i>
-                                    <input type="file" id="profileImageUpload" class="d-none" accept="image/*">
+                            <div class="profile-image-container mb-4">
+                                <div class="image-upload-container profile-image">
+                                    <img src="" alt="Profile Image" id="profileImagePreview" style="display:none;">
+                                    <div class="upload-placeholder">
+                                        <i class="bi bi-person fs-2 mb-2"></i>
+                                        <p>Profile Photo</p>
+                                    </div>
+                                    <input type="file" id="profileImageUpload" accept="image/*">
                                 </div>
                             </div>
 
@@ -99,22 +108,71 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="firstName" class="form-label">First Name</label>
-                                    <input type="text" class="form-control" id="firstName" required>
+                                    <input type="text" class="form-control" id="firstName"
+                                        placeholder="Enter first name" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="lastName" class="form-label">Last Name</label>
-                                    <input type="text" class="form-control" id="lastName" required>
+                                    <input type="text" class="form-control" id="lastName" placeholder="Enter last name"
+                                        required>
                                 </div>
                             </div>
 
+                            <!-- Contact Information -->
                             <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email"
+                                        placeholder="Enter email address" required>
+                                </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="dateOfBirth" class="form-label">Date of Birth</label>
                                     <input type="date" class="form-control" id="dateOfBirth" required>
                                 </div>
+                            </div>
+                            <div class="row">
+                               
+                                <div class="col-md-12 mb-3">
+                                    <label for="phoneNumber" class="form-label">Phone number</label>
+                                    <input type="tel" class="form-control" id="phoneNumber"
+                                        placeholder="Enter phone number" required>
+                                </div>
+                            </div>
+                            <!-- WhatsApp Number -->
+                            <div class="row mb-3">
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="sameWhatsAppNumber">
+                                        <label class="form-check-label" for="sameWhatsAppNumber">
+                                            Use same number for WhatsApp
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" id="whatsAppNumberSection" style="display:none;">
+                                <div class="col-12 mb-3">
+                                    <label for="whatsAppNumber" class="form-label">WhatsApp Number</label>
+                                    <input type="tel" class="form-control" id="whatsAppNumber"
+                                        placeholder="Enter WhatsApp number">
+                                </div>
+                            </div>
+
+                            <!-- Location Information -->
+                            <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label for="email" class="form-label">Email Address</label>
-                                    <input type="email" class="form-control" id="email" required>
+                                    <label for="countryOfOrigin" class="form-label">Country of Origin</label>
+                                    <select class="form-select" id="countryOfOrigin" required>
+                                        <option value="">Select Country</option>
+                                        <option value="ZA">South Africa</option>
+                                        <option value="US">United States</option>
+                                        <option value="KE">Kenya</option>
+                                        <option value="NG">Nigeria</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="currentCity" class="form-label">Current City</label>
+                                    <input type="text" class="form-control" id="currentCity"
+                                        placeholder="Enter current city" required>
                                 </div>
                             </div>
 
@@ -130,79 +188,23 @@
                                     </select>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <label for="playingStyle" class="form-label">Position</label>
-                                    <select class="form-select" id="playingStyle" required>
+                                    <label for="playingPosition" class="form-label">Playing Position</label>
+                                    <select class="form-select" id="playingPosition" required>
                                         <option value="">Select Position</option>
-                                        <option value="shooter">Point Guard</option>
-                                        <option value="shooter">Shooting Guard</option>
-                                        <option value="defender">Small Forward</option>
-                                        <option value="playmaker">Power forward</option>
-                                        <option value="allRounder">Center</option>
+                                        <option value="pointGuard">Point Guard</option>
+                                        <option value="shootingGuard">Shooting Guard</option>
+                                        <option value="smallForward">Small Forward</option>
+                                        <option value="powerForward">Power Forward</option>
+                                        <option value="center">Center</option>
                                     </select>
-                                </div>
-                            </div>
-
-                            <!-- Contact Information -->
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="phoneNumber" class="form-label">Phone Number</label>
-                                    <input type="tel" class="form-control" id="phoneNumber" required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <div class="form-check mt-4">
-                                        <input class="form-check-input" type="checkbox" id="sameWhatsAppNumber">
-                                        <label class="form-check-label" for="sameWhatsAppNumber">
-                                            Use same number for WhatsApp
-                                        </label>
-                                    </div>
-                                    <div id="whatsAppNumberSection" class="mt-2" style="display: none;">
-                                        <label for="whatsAppNumber" class="form-label">WhatsApp Number</label>
-                                        <input type="tel" class="form-control" id="whatsAppNumber">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Location Information -->
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="countryOfOrigin" class="form-label">Country of Origin</label>
-                                    <select class="form-select" id="countryOfOrigin" required>
-                                        <option value="">Select Country</option>
-                                        <option value="ZA">South Africa</option>
-                                        <option value="US">United States</option>
-                                        <!-- Add more countries -->
-                                    </select>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="currentCity" class="form-label">Current City</label>
-                                    <input type="text" class="form-control" id="currentCity" required>
-                                </div>
-                            </div>
-
-                            <!-- Social Media Links -->
-                            <div class="row">
-                                <div class="col-md-4 mb-3">
-                                    <label for="instagramLink" class="form-label">Instagram</label>
-                                    <input type="url" class="form-control" id="instagramLink"
-                                        placeholder="Instagram Profile URL">
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <label for="facebookLink" class="form-label">Facebook</label>
-                                    <input type="url" class="form-control" id="facebookLink"
-                                        placeholder="Facebook Profile URL">
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <label for="tiktokLink" class="form-label">TikTok</label>
-                                    <input type="url" class="form-control" id="tiktokLink"
-                                        placeholder="TikTok Profile URL">
                                 </div>
                             </div>
 
                             <!-- Player Bio -->
                             <div class="mb-3">
-                                <label for="playerBio" class="form-label">Tell Us About Yourself</label>
+                                <label for="playerBio" class="form-label">Player Biography</label>
                                 <textarea class="form-control" id="playerBio" rows="4"
-                                    placeholder="Share your basketball journey, achievements, and aspirations..."></textarea>
+                                    placeholder="Tell us about your basketball journey..."></textarea>
                             </div>
 
                             <!-- Terms and Conditions -->
@@ -215,7 +217,7 @@
 
                             <!-- Submit Button -->
                             <div class="text-center">
-                                <button type="submit" class="btn btn-success btn-lg">Create Player Profile</button>
+                                <button type="submit" class="btn btn-success btn-lg px-5">Create Profile</button>
                             </div>
                         </form>
                     </div>
