@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basketball Capetown</title>
+    <title>Basketball Capetown -Players</title>
 
     <!-- External CSS Libraries -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -51,119 +51,161 @@
     </nav>
     <!-- End Navbar -->
 
-    <!-- Hero Section -->
+    <!-- Events Hero Section -->
     <div class="events-hero container-fluid p-0 position-relative">
         <div
             class="hero-overlay d-flex align-items-center justify-content-center position-absolute top-0 start-0 w-100 h-100">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center text-white">
-                        <h1 class="display-4 mb-3 fw-bold">BASKETBALL CAPETOWN PLAYERS</h1>
-                        <p class="lead mb-4 px-3">Step into the action with Cape Town's premier basketball events.
-                            Whether you're hosting your own tournament or competing for glory, this is where the passion
-                            for hoops meets the thrill of the game.</p>
+                        <h1 class="display-4 mb-4">Your Basketball Journey Starts Here</h1>
+                        <p class="lead mb-4">Connect, Compete, and Showcase Your Skills with Basketball Capetown</p>
                         <div class="hero-cta d-flex justify-content-center gap-3">
-                            <a href="#upcoming-events" class="btn btn-success btn-lg px-4 py-2">Explore Events</a>
-                            <a href="#" class="btn btn-outline-light btn-lg px-4 py-2">Create a Profile</a>
+                            <a href="#" class="btn btn-success btn-lg me-3">Create Your Profile</a>
+                            <a href="https://www.instagram.com/basketballcapetown/profilecard/?igsh=MTg0amFld3gycWVzaw=="
+                                class="btn btn-outline-light btn-lg">Join Our Community</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <img src="img/hero/poster.jpg" class="position-absolute top-0 start-0 w-100 h-100 object-cover"
+        <img src="img/featured/ben vs bompito.jpg" class="position-absolute top-0 start-0 w-100 h-100 object-cover"
             alt="Basketball Events in Cape Town">
     </div>
+    <!-- Hero Section End -->
 
     <!-- Main Content -->
     <div class="featured-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <div class="mb-4 d-flex align-items-center">
-                        <div class="row w-100 g-2">
-                            <div class="col-md-6 mb-2">
-                                <input type="text" class="form-control" placeholder="Search players">
+                    <!-- Search and Filter Section -->
+                    <div class="mb-4">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" id="playerSearch" class="form-control"
+                                    placeholder="Search players by name, style, or category">
                             </div>
-                            <div class="col-md-6 mb-2">
-                                <select class="form-select" id="eventFilter">
-                                    <option value="">All Events</option>
-                                    <option value="tournament">3v3 Tournament</option>
-                                    <option value="1vs1">1vs1 Challenges</option>
-                                    <option value="5v5">5v5 Tournament</option>
-                                    <option value="training">Training Camps</option>
+                            <div class="col-md-6 mb-3">
+                                <select id="playerCategory" class="form-select">
+                                    <option value="">All Tournament Categories</option>
+                                    <option value="1v1">1v1 Players</option>
+                                    <option value="3v3">3v3 Players</option>
+                                    <option value="5v5">5v5 Players</option>
                                 </select>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Compact Players Grid -->
-                    <div class="row row-cols-1 row-cols-md-3 g-3">
-                        <div class="col">
-                            <div class="card h-100">
-                                <img src="img/players/Andy.jpg" class="card-img-top" alt="Andy Maweja">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title mb-2">Andy Maweja</h5>
-                                    <p class="card-text mb-2">
-                                        <strong>Age:</strong> 24<br>
-                                        <strong>Origin:</strong> Republic Democratic of Congo
-                                    </p>
-                                    <a href="#" class="btn btn-sm btn-success">View Profile</a>
+                    <!-- Players Section -->
+                    <section class="bc-players-section mb-5">
+                        <div class="row" id="playersContainer">
+                            <div class="col-md-4 mb-3">
+                                <div class="bc-player-card">
+                                    <div class="bc-player-card-content text-center">
+                                        <div class="bc-player-image-container mx-auto mb-3">
+                                            <img src="img/players/Andy.jpg" class="bc-player-image" alt="Player">
+                                        </div>
+                                        <h4>Andy Maweja</h4>
+                                        <p class="text-muted">Age: 24 | Cape Town, SA | 1v1 Player</p>
+                                        <a href="player-profile.html" class="btn btn-outline-success">View Profile</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col">
-                            <div class="card h-100">
-                                <img src="img/players/jordy.jpg" class="card-img-top" alt="Player Name">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title mb-2">Jordy Shek</h5>
-                                    <p class="card-text mb-2">
-                                        <strong>Age:</strong> 22<br>
-                                        <strong>Origin:</strong> Republic Democratic of Congo
-                                    </p>
-                                    <a href="#" class="btn btn-sm btn-success">View Profile</a>
+                            <div class="col-md-4 mb-3">
+                                <div class="bc-player-card">
+                                    <div class="bc-player-card-content text-center">
+                                        <div class="bc-player-image-container mx-auto mb-3">
+                                            <img src="img/players/ben.jpg" class="bc-player-image" alt="Player">
+                                        </div>
+                                        <h4>Ben Myburgh</h4>
+                                        <p class="text-muted">Age: 26 | Cape Town, SA | 3v3 Player</p>
+                                        <a href="player-profile.html" class="btn btn-outline-success">View Profile</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col">
-                            <div class="card h-100">
-                                <img src="img/players/chaunees.jpg" class="card-img-top" alt="Player Name">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title mb-2">Chaunees Goliath</h5>
-                                    <p class="card-text mb-2">
-                                        <strong>Age:</strong> 22<br>
-                                        <strong>Origin:</strong> South Africa
-                                    </p>
-                                    <a href="#" class="btn btn-sm btn-success">View Profile</a>
+                            <div class="col-md-4 mb-3">
+                                <div class="bc-player-card">
+                                    <div class="bc-player-card-content text-center">
+                                        <div class="bc-player-image-container mx-auto mb-3">
+                                            <img src="img/players/chaunees.jpg" class="bc-player-image" alt="Player">
+                                        </div>
+                                        <h4>Chaunees Goliath</h4>
+                                        <p class="text-muted">Age: 22 | Cape Town, SA | 5v5 Player</p>
+                                        <a href="player-profile.html" class="btn btn-outline-success">View Profile</a>
+                                    </div>
                                 </div>
                             </div>
+                            <!-- More players can be added dynamically -->
                         </div>
-                    </div>
 
-                    <!-- Pagination -->
-                    <nav aria-label="Player pages" class="mt-4">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+                        <!-- Load More Button -->
+                        <div class="text-center mt-4">
+                            <button id="loadMorePlayers" class="btn btn-success btn-lg">Load More Players</button>
+                        </div>
+                    </section>
                 </div>
-
 
                 <!-- Sidebar -->
                 <div class="col-lg-3">
-                    <!-- Social Media Sidebar - Copied from homepage -->
+
+                    <!-- FAQ Sidebar -->
+                    <aside class="bc-faq-sidebar fade-in bc-sidebar">
+                        <h1 class="mb-3 bc-news-block-title">New to Basketball Capetown?</h1>
+                        <hr class="mb-3">
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne">
+                                        How to Create a Profile?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show">
+                                    <div class="accordion-body">
+                                        Click "Create Your Profile" button, fill out the form with your details, and
+                                        submit. It's quick and easy!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo">
+                                        Which Tournament Can I Join?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        We offer 1v1, 3v3, and 5v5 tournaments. Choose the category that matches your
+                                        skill and preference.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree">
+                                        Are There Age Restrictions?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        Players must be between 16-50 years old. We have categories for different skill
+                                        levels and age groups.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Our Social Media -->
                     <aside class="bc-social-sidebar fade-in bc-sidebar">
                         <h1 class="mb-3 bc-news-block-title">Follow Us</h1>
                         <hr class="mb-3">
                         <div class="d-flex flex-wrap">
-                            <a href="https://www.instagram.com/basketballcapetown/profilecard/?igsh=MTg0amFld3gycWVzaw==" class="bc-social-icon"
-                                aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="https://www.instagram.com/basketballcapetown/profilecard/?igsh=MTg0amFld3gycWVzaw=="
+                                class="bc-social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                             <a href="https://youtube.com/@basketballcapetown" class="bc-social-icon"
                                 aria-label="YouTube"><i class="bi bi-youtube"></i></a>
                             <a href="https://www.facebook.com/basketballcapetown" class="bc-social-icon"
@@ -173,22 +215,42 @@
                         </div>
                     </aside>
 
-                    <!-- Tournament Statistics Sidebar -->
-                    <aside class="bc-sidebar mt-4">
-                        <h1 class="mb-3 bc-news-block-title">Tournament Stats</h1>
+                    <!-- Social Impact Sidebar -->
+                    <aside class="bc-social-impact-sidebar fade-in bc-sidebar">
+                        <h1 class="mb-3 bc-news-block-title">Social Impact</h1>
                         <hr class="mb-3">
-                        <ul class="list-unstyled">
-                            <li>Total Players: 120</li>
-                            <li>1v1 Participants: 45</li>
-                            <li>3v3 Participants: 38</li>
-                            <li>5v5 Participants: 25</li>
-                            <li>Training Bootcamp: 12</li>
-                        </ul>
+                        <div class="bc-social-page">
+                            <img src="img/social_impact/hgt logo.jpg" alt="Hoopers for Life">
+                            <a href="https://www.instagram.com/hoopers.game.time?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                class="bc-text-hover-link bc-anchor-link">Hoopers Game Time</a>
+                        </div>
+                        <div class="bc-social-page">
+                            <img src="img/social_impact/prspct.jpg" alt="Hoopers for Life">
+                            <a href="https://www.instagram.com/prspcthoops?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                class="bc-text-hover-link bc-anchor-link">PRSPCT HOOPS</a>
+                        </div>
+
+                        <div class="bc-social-page">
+                            <img src="img/social_impact/ballisvibe-logo.jpg" alt="Ball is Vibe">
+                            <a href="https://www.instagram.com/ballisvibe?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                class="bc-text-hover-link bc-anchor-link">Ball is Vibe</a>
+                        </div>
+                        <hr>
+                        <div class="bc-social-page">
+                            <img src="img/social_impact/ballislife-logo.jpg" alt="Ball is Life CPT">
+                            <a href="https://www.instagram.com/ballislife_cpt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                class="bc-text-hover-link bc-anchor-link">Ball is Life CPT</a>
+                        </div>
+                        <hr>
+
                     </aside>
+
+
                 </div>
             </div>
         </div>
     </div>
+    <!-- End Main Content -->
 
     <!-- Support Button -->
     <a href="#" class="bc-support-button btn btn-success">Support Us</a>
