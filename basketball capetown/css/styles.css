@@ -847,3 +847,16 @@ hr {
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
+
+.blog-hero {
+    height: 500px;
+}
+
+.blog-hero .hero-overlay {
+    z-index: 1;
+}
+
+.blog-search-container {
+    position: relative;
+    z-index: 2;
+}
