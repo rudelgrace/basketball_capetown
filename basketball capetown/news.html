@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Capetown</title>
+
+    <!-- External CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom Favicon and Stylesheet -->
+    <link rel="icon" href="img/logo/bc-ico.png" type="image/png">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="img/logo/bc-logo.png" alt="Basketball Capetown Logo">
+            </a>
+
+            <!-- Mobile Navigation Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Offcanvas -->
+            <div class="offcanvas offcanvas-end" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="players.html">Players</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Stats</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">News</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Bets</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Blog Hero Section with Background Image -->
+    <div class="blog-hero position-relative">
+        <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"
+            style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('img/featured/basketball-hero-bg.jpg') no-repeat center center; background-size: cover;">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-10">
+                        <h1 class="display-4 text-white fw-bold mb-4">Basketball Stories That Inspire</h1>
+                        <p class="lead text-white-50 mb-5">Dive into the heart of Cape Town's basketball narratives</p>
+
+                        <!-- Improved Search Section -->
+                        <div class="blog-search-container">
+                            <div class="row justify-content-center">
+                                <div class="col-md-10 col-lg-8">
+                                    <form class="input-group input-group-lg shadow-lg">
+                                        <input type="text" class="form-control"
+                                            placeholder="Search blogs, stories, and insights..."
+                                            aria-label="Search blogs">
+                                        <select class="form-select flex-shrink-0" style="max-width: 200px;">
+                                            <option selected>All Categories</option>
+                                            <option value="1">Player Stories</option>
+                                            <option value="2">Tournament Highlights</option>
+                                            <option value="3">Training Insights</option>
+                                            <option value="4">Community Impact</option>
+                                        </select>
+                                        <button class="btn btn-success" type="button">
+                                            <i class="bi bi-search"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Content -->
+    <div class="featured-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="row g-4">
+                        <!-- Blog Card 1 -->
+                        <div class="col-md-4">
+                            <div class="card h-100 bc-blog-card">
+                                <img src="img/featured/gabi vs amos.jpg" class="card-img-top" alt="Blog Post Image">
+                                <div class="card-body">
+                                    <span class="badge bg-success mb-2">Player Stories</span>
+                                    <h5 class="card-title">From Street Courts to Championship Dreams</h5>
+                                    <p class="card-text text-muted">Andy Maweja's journey from local pickup games to
+                                        becoming a rising basketball star in Cape Town.</p>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">July 15, 2024</small>
+                                    <a href="#" class="btn btn-sm btn-outline-success">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Blog Card 2 -->
+                        <div class="col-md-4">
+                            <div class="card h-100 bc-blog-card">
+                                <img src="img/featured/gabi vs amos.jpg" class="card-img-top" alt="Blog Post Image">
+                                <div class="card-body">
+                                    <span class="badge bg-success mb-2">Community Impact</span>
+                                    <h5 class="card-title">Hoops Beyond the Game</h5>
+                                    <p class="card-text text-muted">How Basketball Capetown programs are transforming
+                                        youth lives through sports mentorship.</p>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">June 22, 2024</small>
+                                    <a href="#" class="btn btn-sm btn-outline-success">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Blog Card 3 -->
+                        <div class="col-md-4">
+                            <div class="card h-100 bc-blog-card">
+                                <img src="img/blog/training-techniques.jpg" class="card-img-top" alt="Blog Post Image">
+                                <div class="card-body">
+                                    <span class="badge bg-success mb-2">Training Insights</span>
+                                    <h5 class="card-title">Next Level: Advanced Training Techniques</h5>
+                                    <p class="card-text text-muted">Exclusive insights from top Cape Town coaches on
+                                        developing elite basketball skills.</p>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">May 30, 2024</small>
+                                    <a href="#" class="btn btn-sm btn-outline-success">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- More Blog Cards with same structure -->
+                        <div class="col-md-4">
+                            <div class="card h-100 bc-blog-card">
+                                <img src="img/blog/tournament-highlight.jpg" class="card-img-top" alt="Blog Post Image">
+                                <div class="card-body">
+                                    <span class="badge bg-success mb-2">Tournament Highlights</span>
+                                    <h5 class="card-title">Battle Between Threes: A Thrilling Showdown</h5>
+                                    <p class="card-text text-muted">Recap of the most intense 3v3 tournament in Cape
+                                        Town this season.</p>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">April 18, 2024</small>
+                                    <a href="#" class="btn btn-sm btn-outline-success">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Add 2 more blog cards to complete first page -->
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="d-flex justify-content-center mt-5">
+                        <nav aria-label="Blog navigation">
+                            <ul class="pagination">
+                                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Sidebar (Same as Index Page) -->
+                <div class="col-lg-3">
+                    <!-- Social Media Sidebar -->
+                    <aside class="bc-social-sidebar fade-in bc-sidebar">
+                        <h1 class="mb-3 bc-news-block-title">Follow Us</h1>
+                        <hr class="mb-3">
+                        <div class="d-flex flex-wrap">
+                            <a href="https://www.instagram.com/basketballcapetown" class="bc-social-icon"
+                                aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="https://youtube.com/@basketballcapetown" class="bc-social-icon"
+                                aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                            <a href="https://www.facebook.com/basketballcapetown" class="bc-social-icon"
+                                aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="https://www.tiktok.com/@basketballcapetown" class="bc-social-icon"
+                                aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                        </div>
+                    </aside>
+
+                    <!-- Most Read Blog Posts -->
+                    <aside class="bc-headline-news-sidebar fade-in bc-sidebar">
+                        <div class="bc-news-content">
+                            <div class="bc-news-header">
+                                <div class="bc-news-title-container">
+                                    <h1 class="bc-news-block-title">Most Read</h1>
+                                </div>
+                            </div>
+                            <hr>
+                            <ul class="bc-news-list">
+                                <li class="bc-news-list-item">
+                                    <a href="#" class="bc-text-hover-link">
+                                        Coach Strategies: Winning Mindset in Basketball
+                                    </a>
+                                    <hr>
+                                </li>
+                                <li class="bc-news-list-item">
+                                    <a href="#" class="bc-text-hover-link">
+                                        Youth Basketball: Building Champions of Tomorrow
+                                    </a>
+                                    <hr>
+                                </li>
+                                <li class="bc-news-list-item">
+                                    <a href="#" class="bc-text-hover-link">
+                                        Behind the Scenes: A Day in Professional Basketball
+                                    </a>
+                                    <hr>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+
+                    <!-- Blog Categories -->
+                    <aside class="bc-sidebar fade-in">
+                        <h1 class="bc-news-block-title mb-3">Blog Categories</h1>
+                        <hr class="mb-3">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action">Player Stories</a>
+                            <a href="#" class="list-group-item list-group-item-action">Tournament Highlights</a>
+                            <a href="#" class="list-group-item list-group-item-action">Training Insights</a>
+                            <a href="#" class="list-group-item list-group-item-action">Community Impact</a>
+                            <a href="#" class="list-group-item list-group-item-action">Local Leagues</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Support Button -->
+    <a href="#" class="bc-support-button btn btn-success">Support Us</a>
+    <!-- End Support Button -->
+
+    <!-- Footer -->
+    <footer class="bc-footer text-center">
+        <div class="container">
+            <p>&copy; 2024 Basketball Capetown. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Bootstrap and Popper.js Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
