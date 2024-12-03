@@ -860,3 +860,11 @@ hr {
     position: relative;
     z-index: 2;
 }
+.article-side-image {
+    max-width: 300px;
+    height: auto;
+    float: right;
+    margin: 0 0 15px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
