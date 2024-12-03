@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rising Stars of Cape Town - Basketball Capetown</title>
+
+    <!-- External CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom Favicon and Stylesheet -->
+    <link rel="icon" href="img/logo/bc-ico.png" type="image/png">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="img/logo/bc-logo.png" alt="Basketball Capetown Logo">
+            </a>
+
+            <!-- Mobile Navigation Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Offcanvas -->
+            <div class="offcanvas offcanvas-end" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="players.html">Players</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Stats</a></li>
+                        <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Bets</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Article Hero Section -->
+    <div class="events-hero container-fluid p-0 position-relative">
+        <div
+            class="hero-overlay d-flex align-items-center justify-content-center position-absolute top-0 start-0 w-100 h-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center text-white">
+                        <h1 class="display-4 mb-4">Rising Stars of Cape Town</h1>
+                        <p class="lead mb-4">Exploring the Emerging Talents in Cape Town Basketball</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="img/featured/fwesh.jpg" class="position-absolute top-0 start-0 w-100 h-100 object-cover"
+            alt="Rising Basketball Stars">
+    </div>
+    <!-- Hero Section End -->
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-9">
+                <!-- Article Content -->
+                <article class="mb-5">
+                    <div class="article-meta d-flex justify-content-between align-items-center mb-4">
+                        <div class="author-info">
+                            <img src="img/authors/emma-rodriguez.jpg" alt="Emma Rodriguez" class="rounded-circle me-3"
+                                style="width: 50px; height: 50px;">
+                            <span class="text-muted">By Emma Rodriguez | May 28, 2024</span>
+                        </div>
+                        <div class="social-share">
+                            <a href="#" class="text-muted me-3"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="text-muted me-3"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="text-muted"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="article-content">
+                        <img src="img/featured/ben vs bompito.jpg" alt="Youth Basketball Training"
+                            class="article-side-image">
+
+                        <p>Cape Town's basketball scene is witnessing an extraordinary surge of young talent that
+                            promises to reshape the future of the sport in our city. These rising stars are not just
+                            players; they are visionaries who embody skill, passion, and community spirit.</p>
+
+                        <p>At the forefront of this exciting wave is 17-year-old Marcus Williams from Khayelitsha. Known
+                            for his exceptional court vision and lightning-fast dribbling, Marcus has already caught the
+                            attention of national scouts. His journey from local community courts to potential
+                            professional pathways represents the transformative power of basketball in our community.
+                        </p>
+
+                        <h3 class="mt-4 mb-3">The Emerging Talent Pipeline</h3>
+
+                        <p>Basketball Capetown's youth development programs have been instrumental in nurturing these
+                            talents. Through targeted training, mentorship, and exposure to competitive environments, we
+                            are creating a robust ecosystem that supports young athletes' dreams.</p>
+
+                        <p>Players like Aisha Daniels, a 16-year-old point guard from Mitchell's Plain, exemplify this
+                            approach. Her strategic gameplay and leadership on the court have already won her multiple
+                            tournament MVP awards, signaling a bright future ahead.</p>
+                    </div>
+                </article>
+
+                <!-- Comments Section -->
+                <section class="comments-section bg-light p-4 rounded">
+                    <h4 class="mb-4">Comments (1)</h4>
+
+                    <!-- Existing Comment -->
+                    <div class="comment mb-4 p-3 border rounded">
+                        <div class="comment-header d-flex justify-content-between align-items-center mb-2">
+                            <div class="commenter-info">
+                                <strong>David Thompson</strong>
+                                <small class="text-muted ms-2">June 1, 2024</small>
+                            </div>
+                        </div>
+                        <p class="comment-text">
+                            Incredible article! It's inspiring to see how Basketball Capetown is supporting young
+                            talents from different communities. Players like Marcus and Aisha show that with the right
+                            support and opportunities, our youth can achieve remarkable things.
+                        </p>
+                    </div>
+
+                    <h4 class="mb-4">Leave a Comment</h4>
+                    <form id="commentForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="comment" class="form-label">Your Comment</label>
+                            <textarea class="form-control" id="comment" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">Post Comment</button>
+                    </form>
+                </section>
+            </div>
+            <!-- Sidebar -->
+            <div class="col-lg-3">
+                <!-- Our Social Media -->
+                <aside class="bc-social-sidebar fade-in bc-sidebar">
+                    <h1 class="mb-3 bc-news-block-title">Follow Us</h1>
+                    <hr class="mb-3">
+                    <div class="d-flex flex-wrap">
+                        <a href="https://www.instagram.com/basketballcapetown/" class="bc-social-icon"
+                            aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://youtube.com/@basketballcapetown" class="bc-social-icon" aria-label="YouTube"><i
+                                class="bi bi-youtube"></i></a>
+                        <a href="https://www.facebook.com/basketballcapetown" class="bc-social-icon"
+                            aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.tiktok.com/@basketballcapetown" class="bc-social-icon"
+                            aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </aside>
+
+                <!-- Popular News -->
+                <aside class="bc-popular-news-sidebar fade-in bc-sidebar mt-4">
+                    <h1 class="mb-3 bc-news-block-title">Popular News</h1>
+                    <hr class="mb-3">
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <a href="#" class="bc-text-hover-link">Top 10 Players of the Season</a>
+                            <p class="text-muted small">June 20, 2024</p>
+                        </li>
+                        <li class="mb-3">
+                            <a href="#" class="bc-text-hover-link">Upcoming Tournament Schedule</a>
+                            <p class="text-muted small">May 15, 2024</p>
+                        </li>
+                        <li>
+                            <a href="#" class="bc-text-hover-link">Training Camp Announcements</a>
+                            <p class="text-muted small">April 5, 2024</p>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Support Button -->
+    <a href="#" class="bc-support-button btn btn-success">Support Us</a>
+
+    <!-- Footer -->
+    <footer class="bc-footer text-center">
+        <div class="container">
+            <p>&copy; 2024 Basketball Capetown. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap and Popper.js Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Comment submitted successfully!');
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
