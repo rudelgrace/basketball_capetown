@@ -821,3 +821,7 @@ hr {
     object-fit: cover;
     margin-top: 15px;
 }
+
+.form-check{
+    padding-left: 2.5em !important;
+}
