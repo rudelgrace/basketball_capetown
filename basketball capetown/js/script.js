@@ -46,82 +46,155 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollObserver.observe(element);
     });
 });
- // Image Upload Previews
- function setupImageUpload(inputId, previewId) {
-    const input = document.getElementById(inputId);
-    const preview = document.getElementById(previewId);
-    const container = input.closest('.image-upload-container');
-    const placeholder = container.querySelector('.upload-placeholder');
 
-    input.addEventListener('change', function (event) {
+$(document).ready(function () {
+    // Initialize Select2 for Playing Category
+    $("#playingCategory").select2({
+        theme: "bootstrap",
+        placeholder: "Select Playing Categories",
+        multiple: true,
+        width: '100%'
+    });
+    // International Phone Number Input
+    const phoneInput = document.querySelector("#phoneNumber");
+    const iti = window.intlTelInput(phoneInput, {
+        utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
+        initialCountry: "za", // Default to South Africa
+        preferredCountries: ["za", "mz"], // Preferred countries
+        separateDialCode: true
+    });
+    // Populate Countries Dynamically
+    const countries = [
+        { code: "ZA", name: "South Africa", dialCode: "+27" },
+        { code: "MZ", name: "Mozambique", dialCode: "+258" },
+        // Add more countries as needed
+    ];
+
+    const countrySelects = ['#countryOfOrigin', '#currentResidence'];
+    countrySelects.forEach(selector => {
+        const $select = $(selector);
+        $select.append('<option value="">Select Country</option>');
+        countries.forEach(country => {
+            $select.append(`<option value="${country.code}">${country.name} (${country.dialCode})</option>`);
+        });
+    });
+
+    // Form Submission Handling
+    $('#playerRegistrationForm').on('submit', function (e) {
+        // Validate phone number
+        if (!iti.isValidNumber()) {
+            e.preventDefault();
+            alert('Please enter a valid phone number');
+            return;
+        }
+
+        // Additional form validation logic
+        if (!this.checkValidity()) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        $(this).addClass('was-validated');
+    });
+    // Profile Image Preview with improved error handling
+    $('#profileImage').on('change', function (event) {
         const file = event.target.files[0];
+
+        // Validate file type and size
+        const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+        const maxSize = 5 * 1024 * 1024; // 5MB
+
         if (file) {
+            // Check file type
+            if (!allowedTypes.includes(file.type)) {
+                alert('Invalid file type. Please upload an image (JPEG, PNG, GIF, WebP).');
+                $(this).val(''); // Clear the file input
+                return;
+            }
+
+            // Check file size
+            if (file.size > maxSize) {
+                alert('File is too large. Maximum size is 5MB.');
+                $(this).val(''); // Clear the file input
+                return;
+            }
+
+            // File reader for preview
             const reader = new FileReader();
+
             reader.onload = function (e) {
-                preview.src = e.target.result;
-                preview.style.display = 'block';
-                placeholder.style.display = 'none';
+                $('#profileImagePreview').attr('src', e.target.result);
             };
+
+            reader.onerror = function () {
+                alert('Error reading the file. Please try again.');
+            };
+
+            // Read the file
             reader.readAsDataURL(file);
         }
     });
-}
 
-// Setup image uploads
-setupImageUpload('coverImageUpload', 'coverImagePreview');
-setupImageUpload('profileImageUpload', 'profileImagePreview');
+    // Form Validation
+    $('#playerRegistrationForm').on('submit', function (e) {
+        if (!this.checkValidity()) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        $(this).addClass('was-validated');
+    });
 
-// Phone number initialization (similar to previous version)
-const phoneInput = document.getElementById('phoneNumber');
-const whatsAppInput = document.getElementById('whatsAppNumber');
+    // Dynamic Age Calculation
+    $('#dateOfBirth').change(function () {
+        const dob = new Date($(this).val());
+        const today = new Date();
+        let age = today.getFullYear() - dob.getFullYear();
+        const monthDiff = today.getMonth() - dob.getMonth();
 
-const phoneIntl = window.intlTelInput(phoneInput, {
-    initialCountry: "auto",
-    geoIpLookup: function (callback) {
-        fetch('https://ipapi.co/json')
-            .then(response => response.json())
-            .then(data => callback(data.country_code))
-            .catch(() => callback('us'));
-    },
-    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"
-});
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+            age--;
+        }
 
-const whatsAppIntl = window.intlTelInput(whatsAppInput, {
-    initialCountry: "auto",
-    geoIpLookup: function (callback) {
-        fetch('https://ipapi.co/json')
-            .then(response => response.json())
-            .then(data => callback(data.country_code))
-            .catch(() => callback('us'));
-    },
-    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"
-});
+        // Optional: You could add age validation if needed
+        if (age < 13) {
+            $(this).addClass('is-invalid');
+            alert('You must be at least 13 years old to register.');
+        } else {
+            $(this).removeClass('is-invalid');
+        }
+    });
 
-// WhatsApp Number Toggle
-const sameWhatsAppCheckbox = document.getElementById('sameWhatsAppNumber');
-const whatsAppNumberSection = document.getElementById('whatsAppNumberSection');
+    // Phone Number Formatting and Validation
+    $('#phoneNumber').on('input', function () {
+        // Remove non-digit characters
+        let phoneNumber = $(this).val().replace(/\D/g, '');
 
-sameWhatsAppCheckbox.addEventListener('change', function () {
-    whatsAppNumberSection.style.display = this.checked ? 'none' : 'block';
-});
+        // Ensure it starts with the country code or add default
+        if (!phoneNumber.startsWith('27')) {
+            phoneNumber = '27' + phoneNumber.replace(/^0/, '');
+        }
 
-// Form Submission
-document.getElementById('createPlayerProfileForm').addEventListener('submit', function (event) {
-    event.preventDefault();
+        // Format the phone number
+        if (phoneNumber.length > 9) {
+            phoneNumber = phoneNumber.slice(0, 11);
+        }
 
-    // Collect form data
-    const formData = {
-        firstName: document.getElementById('firstName').value,
-        lastName: document.getElementById('lastName').value,
-        email: document.getElementById('email').value,
-        phoneNumber: phoneIntl.getNumber(),
-        whatsAppNumber: sameWhatsAppCheckbox.checked
-            ? phoneIntl.getNumber()
-            : whatsAppIntl.getNumber(),
-        // Add other form fields as needed
-    };
+        $(this).val(phoneNumber);
+    });
 
-    // Here you would typically send data to backend
-    console.log(formData);
-    alert('Profile created successfully!');
+    // Social Media URL Validation
+    $('#facebook, #instagram, #tiktok').on('input', function () {
+        const url = $(this).val();
+        const urlPattern = new RegExp('^(https?:\\/\\/)?' + // protocol
+            '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
+            '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+            '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+            '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+            '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
+
+        if (url && !urlPattern.test(url)) {
+            $(this).addClass('is-invalid');
+        } else {
+            $(this).removeClass('is-invalid');
+        }
+    });
 });
