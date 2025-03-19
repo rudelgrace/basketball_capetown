@@ -3,115 +3,126 @@
             background-color: #f8f9fa;
             padding-bottom: 30px;
         }
-        
+
         .team-header {
             background-color: #2c3e50;
             color: white;
             padding: 10px;
             border-radius: 4px;
         }
-        
+
         .scoreboard {
             background-color: #343a40;
             color: white;
             border-radius: 8px;
             padding: 15px;
             margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        
+
         .score-display {
             font-size: 2.5rem;
             font-weight: bold;
             text-align: center;
         }
-        
+
         .team-name {
             font-size: 1.5rem;
             text-align: center;
             font-weight: bold;
         }
-        
+
         .btn-success {
-            background-color: #2ecc71;
-            border-color: #27ae60;
+            background-color: #198754 !important;
+            border-color: #198754 !important;
         }
-        
+
+
         .btn-success:hover {
-            background-color: #27ae60;
-            border-color: #27ae60;
+            background-color: #198754 !important;
+            border-color: #198754 !important;
         }
-        
+
         .btn-primary {
-            background-color: #3498db;
-            border-color: #2980b9;
+            background-color: #3498db !important;
+            border-color: #2980b9 !important;
         }
-        
+
+        .bg-primary {
+            background-color: #3498db !important;
+            border-color: #2980b9 !important;
+        }
+
         .btn-primary:hover {
             background-color: #2980b9;
             border-color: #2980b9;
         }
-        
+
         .btn-danger {
             background-color: #e74c3c;
             border-color: #c0392b;
         }
-        
+
         .btn-danger:hover {
             background-color: #c0392b;
             border-color: #c0392b;
         }
-        
+
         .table-responsive {
             overflow-x: auto;
         }
-        
+
         .stat-category {
             background-color: #f1f1f1;
             padding: 10px;
             border-radius: 4px;
             margin-bottom: 10px;
         }
-        
+
         @media print {
             .no-print {
                 display: none !important;
             }
-            
+
             .print-only {
                 display: block !important;
             }
-            
+
             .print-header {
                 text-align: center;
                 margin-bottom: 20px;
             }
-            
+
             .print-scoreboard {
                 border: 2px solid #000;
                 padding: 10px;
                 margin-bottom: 20px;
             }
-            
+
             .team-header {
                 background-color: #eee !important;
                 color: #000 !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
-            
+
             .table {
                 font-size: 12px;
             }
-            
+
             body {
                 background-color: white;
             }
         }
-        
+
         .print-only {
             display: none;
         }
-.bfl-title{
-    font-weight: 700;
-}
+
+        .bfl-title {
+            font-weight: 700;
+        }
+
+        .bfl-btn {
+            width: 100%;
+        }
