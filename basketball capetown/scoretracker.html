@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Stats Tracker</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/scorestats.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="img/logo/bc-logo.png" alt="Basketball Capetown Logo">
+            </a>
+
+            <!-- Mobile Navigation Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Offcanvas -->
+            <div class="offcanvas offcanvas-end" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="players.html">Players</a></li> -->
+                        <li class="nav-item"><a class="nav-link" href="scoretracker.html">Score Tracking Demo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="podcasts.html">Podcasts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <div class="container mt-4">
+        <h1 class="text-center mb-4 bfl-title">BFL STATS TRACKING</h1>
+
+        <!-- Team Name Setup Section (Initial View) -->
+        <div id="teamSetup" class="card shadow-sm mb-4 no-print">
+            <div class="card-header bg-success text-white">
+                <h3 class="mb-0">Team Setup</h3>
+            </div>
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="teamAName" class="form-label">Team A Name:</label>
+                        <input type="text" class="form-control" id="teamAName" value="Team A">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="teamBName" class="form-label">Team B Name:</label>
+                        <input type="text" class="form-control" id="teamBName" value="Team B">
+                    </div>
+                    <div class="col-12 text-center mt-3">
+                        <button onclick="saveTeamNames()" class="btn btn-success">Save Team Names</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scoreboard -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="scoreboard">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <p class="team-name" id="teamADisplayName">Team A</p>
+                            <p class="score-display" id="teamAScore">0</p>
+                        </div>
+                        <div class="col-2 text-center">
+                            <h3>VS</h3>
+                        </div>
+                        <div class="col-5">
+                            <p class="team-name" id="teamBDisplayName">Team B</p>
+                            <p class="score-display" id="teamBScore">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls Section -->
+        <div class="card shadow-sm mb-4 no-print">
+            <div class="card-header bg-secondary text-white">
+                <h3 class="mb-0">Record Stats</h3>
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-6 mb-3">
+                        <label for="team" class="form-label">Team:</label>
+                        <select id="team" class="form-select">
+                            <option value="Team A">Team A</option>
+                            <option value="Team B">Team B</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="player" class="form-label">Player:</label>
+                        <select id="player" class="form-select"></select>
+                    </div>
+                </div>
+
+                <div class="stat-category">
+                    <h4>Shooting Stats:</h4>
+                    <div class="row g-2">
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <button onclick="recordStat('threePointer', true)" class="btn btn-primary w-100">3PT
+                                Made</button>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <button onclick="recordStat('threePointer', false)" class="btn btn-danger w-100">3PT
+                                Missed</button>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <button onclick="recordStat('fieldGoal', true)" class="btn btn-primary w-100">2PT
+                                Made</button>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <button onclick="recordStat('fieldGoal', false)" class="btn btn-danger w-100">2PT
+                                Missed</button>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <button onclick="recordStat('freeThrow', true)" class="btn btn-primary w-100">FT
+                                Made</button>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <button onclick="recordStat('freeThrow', false)" class="btn btn-danger w-100">FT
+                                Missed</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-category">
+                    <h4>Other Stats:</h4>
+                    <div class="row g-2">
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <button onclick="recordStat('assist')" class="btn btn-success w-100">Assist</button>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <button onclick="recordStat('rebound')" class="btn btn-success w-100">Rebound</button>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <button onclick="recordStat('steal')" class="btn btn-success w-100">Steal</button>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <button onclick="recordStat('block')" class="btn btn-success w-100">Block</button>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <button onclick="recordStat('turnover')" class="btn btn-success w-100">Turnover</button>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <button onclick="recordStat('foul')" class="btn btn-success w-100">Foul</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Player Section -->
+        <div class="card shadow-sm mb-4 no-print">
+            <div class="card-header bg-info text-white">
+                <h3 class="mb-0">Add Player</h3>
+            </div>
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="newTeam" class="form-label">Add to Team:</label>
+                        <select id="newTeam" class="form-select">
+                            <option value="Team A">Team A</option>
+                            <option value="Team B">Team B</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="newPlayerName" class="form-label">Player Name:</label>
+                        <input type="text" class="form-control" id="newPlayerName" placeholder="Enter player name">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="newPlayerNumber" class="form-label">Jersey #:</label>
+                        <input type="text" class="form-control" id="newPlayerNumber" placeholder="Jersey number">
+                    </div>
+                    <div class="col-12 text-center">
+                        <button onclick="addNewPlayer()" class="btn btn-info text-white">Add Player</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Print Button -->
+        <div class="text-center mb-4 no-print">
+            <button onclick="printResults()" class="btn btn-lg btn-dark">
+                <i class="bi bi-printer"></i> Print Game Results
+            </button>
+        </div>
+
+        <!-- Print Header (Only visible when printing) -->
+        <div class="print-only print-header">
+            <h1 class="text-center">Basketball Game Results</h1>
+            <div class="row text-center print-scoreboard">
+                <div class="col-5">
+                    <h2 id="printTeamAName">Team A</h2>
+                    <h1 id="printTeamAScore">0</h1>
+                </div>
+                <div class="col-2">
+                    <h2>VS</h2>
+                </div>
+                <div class="col-5">
+                    <h2 id="printTeamBName">Team B</h2>
+                    <h1 id="printTeamBScore">0</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Stats Tables -->
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="team-header">
+                        <h3 class="mb-0" id="teamATableHeader">Team A</h3>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Player</th>
+                                        <th>Pts</th>
+                                        <th>3PT</th>
+                                        <th>2PT</th>
+                                        <th>FT</th>
+                                        <th>Reb</th>
+                                        <th>Ast</th>
+                                        <th>Stl</th>
+                                        <th>Blk</th>
+                                        <th>TO</th>
+                                        <th>Foul</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="teamATable"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="team-header">
+                        <h3 class="mb-0" id="teamBTableHeader">Team B</h3>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Player</th>
+                                        <th>Pts</th>
+                                        <th>3PT</th>
+                                        <th>2PT</th>
+                                        <th>FT</th>
+                                        <th>Reb</th>
+                                        <th>Ast</th>
+                                        <th>Stl</th>
+                                        <th>Blk</th>
+                                        <th>TO</th>
+                                        <th>Foul</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="teamBTable"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scorestats.js"></script>
+</body>
+
+</html>
