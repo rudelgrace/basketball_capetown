@@ -1,128 +1,179 @@
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
-            background-color: #f8f9fa;
-            padding-bottom: 30px;
-        }
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f8f9fa;
+    padding-bottom: 30px;
+}
 
-        .team-header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 10px;
-            border-radius: 4px;
-        }
+.team-header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+}
 
-        .scoreboard {
-            background-color: #343a40;
-            color: white;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+.scoreboard {
+    background-color: #343a40;
+    color: white;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-        .score-display {
-            font-size: 2.5rem;
-            font-weight: bold;
-            text-align: center;
-        }
+.score-display {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+}
 
-        .team-name {
-            font-size: 1.5rem;
-            text-align: center;
-            font-weight: bold;
-        }
+.team-name {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+}
 
-        .btn-success {
-            background-color: #198754 !important;
-            border-color: #198754 !important;
-        }
+.btn-success {
+    background-color: #198754 !important;
+    border-color: #198754 !important;
+}
 
 
-        .btn-success:hover {
-            background-color: #198754 !important;
-            border-color: #198754 !important;
-        }
+.btn-success:hover {
+    background-color: #198754 !important;
+    border-color: #198754 !important;
+}
 
-        .btn-primary {
-            background-color: #3498db !important;
-            border-color: #2980b9 !important;
-        }
+.btn-primary {
+    background-color: #3498db !important;
+    border-color: #2980b9 !important;
+}
 
-        .bg-primary {
-            background-color: #3498db !important;
-            border-color: #2980b9 !important;
-        }
+.bg-primary {
+    background-color: #3498db !important;
+    border-color: #2980b9 !important;
+}
 
-        .btn-primary:hover {
-            background-color: #2980b9;
-            border-color: #2980b9;
-        }
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
 
-        .btn-danger {
-            background-color: #e74c3c;
-            border-color: #c0392b;
-        }
+.btn-danger {
+    background-color: #e74c3c;
+    border-color: #c0392b;
+}
 
-        .btn-danger:hover {
-            background-color: #c0392b;
-            border-color: #c0392b;
-        }
+.btn-danger:hover {
+    background-color: #c0392b;
+    border-color: #c0392b;
+}
 
-        .table-responsive {
-            overflow-x: auto;
-        }
+.table-responsive {
+    overflow-x: auto;
+}
 
-        .stat-category {
-            background-color: #f1f1f1;
-            padding: 10px;
-            border-radius: 4px;
-            margin-bottom: 10px;
-        }
+.stat-category {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
 
-        @media print {
-            .no-print {
-                display: none !important;
-            }
 
-            .print-only {
-                display: block !important;
-            }
+.bfl-title {
+    font-weight: 700;
+}
 
-            .print-header {
-                text-align: center;
-                margin-bottom: 20px;
-            }
+.bfl-btn {
+    width: 100%;
+}
 
-            .print-scoreboard {
-                border: 2px solid #000;
-                padding: 10px;
-                margin-bottom: 20px;
-            }
+@media print {
 
-            .team-header {
-                background-color: #eee !important;
-                color: #000 !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
+    /* Hide navigation and unnecessary elements */
+    .navbar,
+    .footer,
+    .no-print {
+        display: none !important;
+    }
 
-            .table {
-                font-size: 12px;
-            }
+    /* Show print-only elements */
+    .print-only {
+        display: block !important;
+    }
 
-            body {
-                background-color: white;
-            }
-        }
+    /* Print header styling */
+    .print-header {
+        text-align: center;
+        margin-bottom: 30px;
+        page-break-after: avoid;
+    }
 
-        .print-only {
-            display: none;
-        }
+    .print-logo {
+        max-width: 150px;
+        height: auto;
+        margin-bottom: 15px;
+    }
 
-        .bfl-title {
-            font-weight: 700;
-        }
+    .print-scoreboard {
+        border: 2px solid #000;
+        padding: 15px;
+        margin: 20px auto;
+        max-width: 80%;
+    }
 
-        .bfl-btn {
-            width: 100%;
-        }
+    /* Table styling for print */
+    .team-header {
+        background-color: #eee !important;
+        color: #000 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 12px;
+        margin-bottom: 20px;
+        page-break-inside: avoid;
+    }
+
+    .table th,
+    .table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+    }
+
+    /* Force background colors in print */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* Overall page styling */
+    body {
+        background-color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+
+    /* Footer styling */
+    .print-footer {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 12px;
+        color: #666;
+    }
+}
+
+.print-only {
+    display: none;
+}
+
+/* Additional styles for printing */
+body.printing {
+    padding: 20px;
+}
