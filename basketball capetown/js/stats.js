@@ -630,7 +630,6 @@ function sortTable(teamName, columnIndex) {
 }
 
 //Download 
-
 function downloadGameReport() {
     // Check if required libraries are loaded
     if (typeof window.jspdf === 'undefined') {
@@ -655,20 +654,51 @@ function downloadGameReport() {
         format: 'a4'
     });
 
+    // Function to add logo
+    function addLogo(doc) {
+        // Base64 logo string (already replaced by you)
+        const logoBase64 = 'your_base64_logo_string'; 
+        
+        try {
+            doc.addImage(
+                logoBase64, 
+                'PNG', // or 'JPEG' depending on your logo type
+                10,    // x position
+                5,     // y position
+                30,    // width
+                15     // height
+            );
+        } catch (error) {
+            console.error('Error adding logo:', error);
+        }
+    }
+
+    // Add logo
+    addLogo(doc);
+
     // Add title to the document
     doc.setFontSize(18);
-    doc.text(`${teamNames['Team A']} vs ${teamNames['Team B']} Game Report`, 10, 10);
+    doc.setFont('helvetica', 'bold');
+    doc.text(`${teamNames['Team A']} vs ${teamNames['Team B']} Game Report`, 50, 10);
 
     // Add game summary section
     doc.setFontSize(12);
+    doc.setFont('helvetica', 'normal');
     const teamATotal = players['Team A'].reduce((sum, player) => sum + (player.stats?.points || 0), 0);
     const teamBTotal = players['Team B'].reduce((sum, player) => sum + (player.stats?.points || 0), 0);
     
     doc.text(`Final Score: ${teamNames['Team A']} ${teamATotal} - ${teamBTotal} ${teamNames['Team B']}`, 10, 20);
 
-    // Helper function to safely get player stat
-    const getStat = (player, stat, defaultValue = 0) => 
-        player.stats?.[stat] ?? defaultValue;
+    // Helper function to safely get nested player stat
+    const getStat = (player, statPath, defaultValue = '-') => {
+        const getNestedStat = (obj, path) => {
+            return path.split('.').reduce((acc, part) => 
+                acc && acc[part] !== undefined ? acc[part] : undefined, obj);
+        };
+
+        const stat = getNestedStat(player.stats, statPath);
+        return stat !== undefined ? stat : defaultValue;
+    };
 
     // Team A Players Table
     doc.autoTable({
@@ -677,20 +707,34 @@ function downloadGameReport() {
         body: players['Team A'].map(player => [
             player.number || '',
             player.name || 'Unknown',
-            getStat(player, 'points'),
-            `${getStat(player, 'threePointer.made')}-${getStat(player, 'threePointer.attempts')}`,
-            `${getStat(player, 'fieldGoal.made')}-${getStat(player, 'fieldGoal.attempts')}`,
-            `${getStat(player, 'freeThrow.made')}-${getStat(player, 'freeThrow.attempts')}`,
-            getStat(player, 'rebound'),
-            getStat(player, 'assist'),
-            getStat(player, 'steal'),
-            getStat(player, 'block'),
-            getStat(player, 'turnover'),
-            getStat(player, 'foul')
+            getStat(player, 'points', 0),
+            `${getStat(player, 'threePointer.made', 0)}-${getStat(player, 'threePointer.attempts', 0)}`,
+            `${getStat(player, 'fieldGoal.made', 0)}-${getStat(player, 'fieldGoal.attempts', 0)}`,
+            `${getStat(player, 'freeThrow.made', 0)}-${getStat(player, 'freeThrow.attempts', 0)}`,
+            getStat(player, 'rebound', 0),
+            getStat(player, 'assist', 0),
+            getStat(player, 'steal', 0),
+            getStat(player, 'block', 0),
+            getStat(player, 'turnover', 0),
+            getStat(player, 'foul', 0)
         ]),
         theme: 'grid',
-        headStyles: { fillColor: [41, 128, 185] },
-        columnStyles: { 0: { cellWidth: 15 } },
+        styles: { 
+            fontSize: 9,
+            cellPadding: 2,
+            valign: 'middle',
+            halign: 'center'
+        },
+        headStyles: { 
+            fillColor: [41, 128, 185],
+            textColor: 255,
+            fontSize: 10,
+            fontStyle: 'bold'
+        },
+        columnStyles: { 
+            0: { cellWidth: 15 },
+            1: { cellWidth: 30 }
+        },
         margin: { top: 30 }
     });
 
@@ -701,25 +745,50 @@ function downloadGameReport() {
         body: players['Team B'].map(player => [
             player.number || '',
             player.name || 'Unknown',
-            getStat(player, 'points'),
-            `${getStat(player, 'threePointer.made')}-${getStat(player, 'threePointer.attempts')}`,
-            `${getStat(player, 'fieldGoal.made')}-${getStat(player, 'fieldGoal.attempts')}`,
-            `${getStat(player, 'freeThrow.made')}-${getStat(player, 'freeThrow.attempts')}`,
-            getStat(player, 'rebound'),
-            getStat(player, 'assist'),
-            getStat(player, 'steal'),
-            getStat(player, 'block'),
-            getStat(player, 'turnover'),
-            getStat(player, 'foul')
+            getStat(player, 'points', 0),
+            `${getStat(player, 'threePointer.made', 0)}-${getStat(player, 'threePointer.attempts', 0)}`,
+            `${getStat(player, 'fieldGoal.made', 0)}-${getStat(player, 'fieldGoal.attempts', 0)}`,
+            `${getStat(player, 'freeThrow.made', 0)}-${getStat(player, 'freeThrow.attempts', 0)}`,
+            getStat(player, 'rebound', 0),
+            getStat(player, 'assist', 0),
+            getStat(player, 'steal', 0),
+            getStat(player, 'block', 0),
+            getStat(player, 'turnover', 0),
+            getStat(player, 'foul', 0)
         ]),
         theme: 'grid',
-        headStyles: { fillColor: [41, 128, 185] },
-        columnStyles: { 0: { cellWidth: 15 } }
+        styles: { 
+            fontSize: 9,
+            cellPadding: 2,
+            valign: 'middle',
+            halign: 'center'
+        },
+        headStyles: { 
+            fillColor: [41, 128, 185],
+            textColor: 255,
+            fontSize: 10,
+            fontStyle: 'bold'
+        },
+        columnStyles: { 
+            0: { cellWidth: 15 },
+            1: { cellWidth: 30 }
+        }
     });
 
-    // Add timestamp
+    // Add copyright notice with dynamically generated date
+    const now = new Date();
+    const formattedDate = now.toLocaleString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true
+    });
+
     doc.setFontSize(10);
-    doc.text(`Generated on: ${new Date().toLocaleString()}`, 10, doc.previousAutoTable.finalY + 15);
+    const copyrightText = `© 2025 Basketball Cape Town. All Rights Reserved. Generated on ${formattedDate}.`;
+    doc.text(copyrightText, 10, doc.previousAutoTable.finalY + 25);
 
     // Save the PDF
     doc.save(`${teamNames['Team A']}_vs_${teamNames['Team B']}_Game_Report.pdf`);
